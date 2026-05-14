@@ -1,0 +1,1924 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>入驻优先级 V3.0 · Amazon US 营养品</title>
+<style>
+* {margin:0;padding:0;box-sizing:border-box}
+body {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Microsoft YaHei','PingFang SC',sans-serif;background:#f0f2f5;color:#1e293b;font-size:13px;line-height:1.5}
+.wrap {max-width:1440px;margin:0 auto}
+.header {background:linear-gradient(135deg,#1e293b 0%,#334155 100%);color:#fff;padding:24px 40px 20px}
+.header h1 {font-size:20px;font-weight:700;margin-bottom:4px;letter-spacing:-0.3px}
+.header .sub {color:#94a3b8;font-size:11px;font-weight:400}
+.header .meta {display:flex;gap:20px;margin-top:10px;font-size:10px;color:#94a3b8}
+.header .meta span {display:flex;align-items:center;gap:5px}
+.header .meta .v {background:rgba(255,255,255,0.1);padding:2px 7px;border-radius:3px;color:#e2e8f0;font-weight:600}
+.model {background:#fff;margin:14px 40px 0;padding:10px 16px;border-radius:8px;font-size:10px;color:#475569;border:1px solid #e2e8f0;box-shadow:0 1px 2px rgba(0,0,0,.02);line-height:1.7}
+.model b {color:#2563eb;font-weight:600}
+.legend {margin:8px 40px 0;font-size:10px;color:#64748b}
+.cards {padding:14px 40px 24px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.card {background:#fff;border-radius:10px;padding:14px 16px;box-shadow:0 1px 3px rgba(0,0,0,.03);border:1px solid #e8ecf1;transition:box-shadow .15s}
+.card:hover {box-shadow:0 3px 12px rgba(0,0,0,.05)}
+.chd {display:flex;align-items:center;gap:8px;margin-bottom:12px;padding-bottom:10px;border-bottom:1.5px solid #e8ecf1}
+.ctitle {font-weight:700;font-size:15px;color:#0f172a;letter-spacing:-0.2px} .ctitle small {color:#64748b;font-weight:400;font-size:10px;margin-left:3px}
+.cgrade {display:inline-flex;align-items:center;justify-content:center;min-width:36px;padding:2px 9px;border-radius:4px;font-size:10px;font-weight:700;color:#fff;letter-spacing:0.5px}
+.cscore {font-size:20px;font-weight:800;color:#2563eb;margin-left:auto;letter-spacing:-0.5px} .cmax {color:#94a3b8;font-size:11px;margin-left:1px;font-weight:500}
+.dimtbl {width:100%;border-collapse:collapse;font-size:9px;margin-bottom:10px}
+.dimtbl td {padding:4px 6px;border-bottom:1px solid #f1f5f9;vertical-align:middle}
+.dimtbl tr:last-child td {border-bottom:none}
+.dimtbl .dl {font-weight:600;color:#1e293b;width:115px;font-size:9px}
+.dimtbl .dt {color:#475569;width:78px;font-weight:500;font-size:9px;white-space:nowrap}
+.dimtbl .dm {color:#64748b;font-size:8px;line-height:1.5;padding-right:2px}
+.dimtbl .db {width:150px;padding-left:2px} .bfill {height:7px;border-radius:4px;min-width:2px;transition:width .4s ease}
+.dimtbl .bfill-track {background:#f1f5f9;height:7px;border-radius:4px;width:100%}
+.dimtbl .ds {font-weight:700;color:#1e293b;text-align:right;width:42px;font-size:10px;white-space:nowrap}
+.dimtbl .dr {font-size:8px;color:#94a3b8;width:48px;text-align:center}
+.cjudge {display:flex;gap:6px;font-size:9px;padding-top:8px;border-top:1px solid #f1f5f9;flex-wrap:wrap}
+.cjudge-item {flex:1;min-width:110px;background:#f8fafc;border-radius:6px;padding:8px 9px;border-left:2.5px solid #cbd5e1;transition:all .15s}
+.cjudge-item:hover {background:#f1f5f9;transform:translateY(-1px)}
+.cjudge-item b {display:block;font-size:8px;color:#64748b;margin-bottom:2px;text-transform:uppercase;letter-spacing:0.3px;font-weight:600}
+.cjudge-item span {display:block;font-weight:600;color:#1e293b;line-height:1.4;font-size:9px}
+.cjudge-item .subline {font-weight:400;font-size:8px;color:#94a3b8;margin-top:1px}
+.clink {display:block;margin-top:10px;padding:7px 0;border-top:1px solid #e2e8f0;text-align:center;font-size:11px;color:#fff;background:linear-gradient(135deg,#2563eb,#3b82f6);text-decoration:none;font-weight:600;border-radius:6px;letter-spacing:0.3px;transition:all .15s;box-shadow:0 1px 3px rgba(37,99,235,.15)}
+.clink:hover {background:linear-gradient(135deg,#1d4ed8,#2563eb);box-shadow:0 2px 6px rgba(37,99,235,.25);transform:translateY(-1px)}
+.fn {font-size:9px;color:#94a3b8;padding:0 40px 24px;line-height:1.9;column-count:2;column-gap:36px}
+.fn strong {color:#64748b;font-weight:600}
+@media (max-width:900px) {.cards {grid-template-columns:1fr} .fn {column-count:1}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="header">
+  <h1>入驻优先级 V3.0</h1>
+  <div class="sub">Simon 指定评分模型 · 11维度 · 100分制 · 全部🟢真实数据</div>
+  <div class="meta">
+    <span>品类 <span class="v">16</span></span>
+    <span>S级 <span class="v">0</span></span>
+    <span>A级 <span class="v">12</span></span>
+    <span>B级 <span class="v">4</span></span>
+  </div>
+</div>
+
+<div class="model">
+  <b>评分模型</b>：市场机会(30) + 竞争结构(30) + 白牌化程度(20) + 盈利能力(10) + 运营风险(10) = 100分 &nbsp;|&nbsp; <b>评级</b>：S≥85 | A≥70 | B≥55 | C&lt;55
+</div>
+<div class="legend">全维度真实数据支撑 · 数据源：Market.xlsx + 细分市场-US-汇总</div>
+
+<div class="cards">
+    <div class="card">
+      <div class="chd">
+        <span class="ctitle">#1 镁软糖 <small>Magnesium Gummies</small></span>
+        <span class="cgrade" style="background:#2563eb">A级</span>
+        <span class="cscore">79.5<span class="cmax">/100</span></span>
+      </div>
+      <table class="dimtbl">
+        <tr>
+          <td class="dl">A1 市场规模</td>
+          <td class="dt">$15.8M/月</td>
+          <td class="dm">月销额15.8M</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:100%;background:#059669"></div></div></td>
+          <td class="ds">10.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·行业销售趋势</td>
+        </tr>
+        <tr>
+          <td class="dl">A2 增长趋势</td>
+          <td class="dt">+104%</td>
+          <td class="dm">半年环比销量增速+104%</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:100%;background:#059669"></div></div></td>
+          <td class="ds">10.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·行业销售趋势</td>
+        </tr>
+        <tr>
+          <td class="dl">A3 ≤12月新品占比</td>
+          <td class="dt">36%</td>
+          <td class="dm">≤12月新品占36%，偏离理想区间</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:71%;background:#059669"></div></div></td>
+          <td class="ds">7.1/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·上架时间分布</td>
+        </tr>
+        <tr>
+          <td class="dl">B1 品牌集中度BCR10</td>
+          <td class="dt">58%</td>
+          <td class="dm">BCR10=58%，健康区间40-65%</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:100%;background:#059669"></div></div></td>
+          <td class="ds">10.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·品牌集中度</td>
+        </tr>
+        <tr>
+          <td class="dl">B2 评论壁垒500+</td>
+          <td class="dt">71%</td>
+          <td class="dm">500+评论占71%，高壁垒极难追赶</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:39%;background:#e11d48"></div></div></td>
+          <td class="ds">3.9/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·评分数分布</td>
+        </tr>
+        <tr>
+          <td class="dl">B3 内容品牌化A+/V</td>
+          <td class="dt">A+98%/V59%</td>
+          <td class="dm">A+98%+视频59%，均值78%</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:100%;background:#059669"></div></div></td>
+          <td class="ds">10.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·A+视频分布</td>
+        </tr>
+        <tr>
+          <td class="dl">C1 中国卖家占比</td>
+          <td class="dt">8%</td>
+          <td class="dm">中国卖家占8%，健康竞争</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:49%;background:#e8a838"></div></div></td>
+          <td class="ds">4.9/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·卖家所属地分布</td>
+        </tr>
+        <tr>
+          <td class="dl">C2 FBA同质化</td>
+          <td class="dt">72%</td>
+          <td class="dm">FBA占比72%，高同质化</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:66%;background:#e8a838"></div></div></td>
+          <td class="ds">6.6/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·卖家类型分布</td>
+        </tr>
+        <tr>
+          <td class="dl">D1 利润空间</td>
+          <td class="dt">ASP$20/毛利63%</td>
+          <td class="dm">ASP$20(5/5)+大类毛利率63%(4/5)</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:90%;background:#059669"></div></div></td>
+          <td class="ds">9.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">汇总·Magnesium</td>
+        </tr>
+        <tr>
+          <td class="dl">E1 供应链复杂度</td>
+          <td class="dt">复杂度22.5</td>
+          <td class="dm">大类Magnesium供应链复杂度22.5(中)</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:60%;background:#e8a838"></div></div></td>
+          <td class="ds">3.0/5</td>
+          <td class="dr">🟢</td>
+          <td class="dr">汇总·Magnesium</td>
+        </tr>
+        <tr>
+          <td class="dl">E2 售后/退货率</td>
+          <td class="dt">退货0.28%</td>
+          <td class="dm">大类Magnesium退货率0.28%(极低)</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:100%;background:#059669"></div></div></td>
+          <td class="ds">5.0/5</td>
+          <td class="dr">🟢</td>
+          <td class="dr">汇总·Magnesium</td>
+        </tr></table>
+      <div class="cjudge">
+        <div class="cjudge-item" style="border-left-color:#2563eb"><b>📊 市场白牌化</b><span>品牌化市场</span><span class="subline">品牌格局清晰，品牌辨识度高</span></div>
+        <div class="cjudge-item" style="border-left-color:#059669"><b>🇨🇳 中国卖家适合度</b><span>适合中国卖家进入，市场有中国卖家验证但竞争温和</span></div>
+        <div class="cjudge-item" style="border-left-color:#2563eb"><b>🚀 新品牌适合度</b><span>可尝试，但需强品牌化策略对抗老牌壁垒</span></div>
+        <div class="cjudge-item" style="border-left-color:#059669"><b>💰 长期利润</b><span>良好，ASP健康且价格战程度低</span></div>
+        <div class="cjudge-item" style="border-left-color:#059669"><b>🎯 推荐打法</b><span>强Review积累策略 ➔ 新品快速迭代抢占窗口</span></div>
+      </div>
+      <a class="clink" href="magnesium_gummies/细分类目分析报告-Magnesium Gummies-镁软糖_交互版.html" target="_blank">📋 查看细分报告 →</a>
+    </div>
+    <div class="card">
+      <div class="chd">
+        <span class="ctitle">#2 白芸豆阻断剂 <small>White Kidney Bean Carb Blocker</small></span>
+        <span class="cgrade" style="background:#2563eb">A级</span>
+        <span class="cscore">77.6<span class="cmax">/100</span></span>
+      </div>
+      <table class="dimtbl">
+        <tr>
+          <td class="dl">A1 市场规模</td>
+          <td class="dt">$5.6M/月</td>
+          <td class="dm">月销额5.6M</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:100%;background:#059669"></div></div></td>
+          <td class="ds">10.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·行业销售趋势</td>
+        </tr>
+        <tr>
+          <td class="dl">A2 增长趋势</td>
+          <td class="dt">+46%</td>
+          <td class="dm">半年环比销量增速+46%</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:96%;background:#059669"></div></div></td>
+          <td class="ds">9.6/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·行业销售趋势</td>
+        </tr>
+        <tr>
+          <td class="dl">A3 ≤12月新品占比</td>
+          <td class="dt">27%</td>
+          <td class="dm">≤12月新品占27%，偏离理想区间</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:95%;background:#059669"></div></div></td>
+          <td class="ds">9.5/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·上架时间分布</td>
+        </tr>
+        <tr>
+          <td class="dl">B1 品牌集中度BCR10</td>
+          <td class="dt">82%</td>
+          <td class="dm">BCR10=82%，偏高</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:56%;background:#e8a838"></div></div></td>
+          <td class="ds">5.6/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·品牌集中度</td>
+        </tr>
+        <tr>
+          <td class="dl">B2 评论壁垒500+</td>
+          <td class="dt">51%</td>
+          <td class="dm">500+评论占51%，高壁垒追赶</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:59%;background:#e8a838"></div></div></td>
+          <td class="ds">5.9/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·评分数分布</td>
+        </tr>
+        <tr>
+          <td class="dl">B3 内容品牌化A+/V</td>
+          <td class="dt">A+84%/V59%</td>
+          <td class="dm">A+84%+视频59%，均值72%</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:100%;background:#059669"></div></div></td>
+          <td class="ds">10.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·A+视频分布</td>
+        </tr>
+        <tr>
+          <td class="dl">C1 中国卖家占比</td>
+          <td class="dt">0%</td>
+          <td class="dm">中国卖家占0%，市场待验证</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:20%;background:#e11d48"></div></div></td>
+          <td class="ds">2.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·卖家所属地分布</td>
+        </tr>
+        <tr>
+          <td class="dl">C2 FBA同质化</td>
+          <td class="dt">70%</td>
+          <td class="dm">FBA占比70%，高同质化</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:70%;background:#059669"></div></div></td>
+          <td class="ds">7.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·卖家类型分布</td>
+        </tr>
+        <tr>
+          <td class="dl">D1 利润空间</td>
+          <td class="dt">ASP$28/毛利70%</td>
+          <td class="dm">ASP$28(5/5)+大类毛利率70%(5/5)</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:100%;background:#059669"></div></div></td>
+          <td class="ds">10.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">汇总·Carb Blockers</td>
+        </tr>
+        <tr>
+          <td class="dl">E1 供应链复杂度</td>
+          <td class="dt">复杂度10.2</td>
+          <td class="dm">大类Carb Blockers供应链复杂度10.2(低)</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:100%;background:#059669"></div></div></td>
+          <td class="ds">5.0/5</td>
+          <td class="dr">🟢</td>
+          <td class="dr">汇总·Carb Blockers</td>
+        </tr>
+        <tr>
+          <td class="dl">E2 售后/退货率</td>
+          <td class="dt">退货0.33%</td>
+          <td class="dm">大类Carb Blockers退货率0.33%(低)</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:60%;background:#e8a838"></div></div></td>
+          <td class="ds">3.0/5</td>
+          <td class="dr">🟢</td>
+          <td class="dr">汇总·Carb Blockers</td>
+        </tr></table>
+      <div class="cjudge">
+        <div class="cjudge-item" style="border-left-color:#2563eb"><b>📊 市场白牌化</b><span>品牌化市场</span><span class="subline">品牌格局清晰，品牌辨识度高</span></div>
+        <div class="cjudge-item" style="border-left-color:#2563eb"><b>🇨🇳 中国卖家适合度</b><span>市场待中国卖家验证，属于先行者机会</span></div>
+        <div class="cjudge-item" style="border-left-color:#e11d48"><b>🚀 新品牌适合度</b><span>难度较高，市场集中度高+评论壁垒强</span></div>
+        <div class="cjudge-item" style="border-left-color:#059669"><b>💰 长期利润</b><span>良好，ASP健康且价格战程度低</span></div>
+        <div class="cjudge-item" style="border-left-color:#059669"><b>🎯 推荐打法</b><span>新品快速迭代抢占窗口 ➔ 中国供应链成本优势 ➔ Premium高端化路线</span></div>
+      </div>
+      <a class="clink" href="white_kidney_bean/细分类目分析报告-White Kidney Bean Carb Blocker-白芸豆阻断剂_交互版.html" target="_blank">📋 查看细分报告 →</a>
+    </div>
+    <div class="card">
+      <div class="chd">
+        <span class="ctitle">#3 铁软糖 <small>Iron Gummies</small></span>
+        <span class="cgrade" style="background:#2563eb">A级</span>
+        <span class="cscore">77.5<span class="cmax">/100</span></span>
+      </div>
+      <table class="dimtbl">
+        <tr>
+          <td class="dl">A1 市场规模</td>
+          <td class="dt">$4.4M/月</td>
+          <td class="dm">月销额4.4M</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:91%;background:#059669"></div></div></td>
+          <td class="ds">9.1/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·行业销售趋势</td>
+        </tr>
+        <tr>
+          <td class="dl">A2 增长趋势</td>
+          <td class="dt">+50%</td>
+          <td class="dm">半年环比销量增速+50%</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:100%;background:#059669"></div></div></td>
+          <td class="ds">10.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·行业销售趋势</td>
+        </tr>
+        <tr>
+          <td class="dl">A3 ≤12月新品占比</td>
+          <td class="dt">31%</td>
+          <td class="dm">≤12月新品占31%，偏离理想区间</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:84%;background:#059669"></div></div></td>
+          <td class="ds">8.4/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·上架时间分布</td>
+        </tr>
+        <tr>
+          <td class="dl">B1 品牌集中度BCR10</td>
+          <td class="dt">51%</td>
+          <td class="dm">BCR10=51%，健康区间40-65%</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:100%;background:#059669"></div></div></td>
+          <td class="ds">10.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·品牌集中度</td>
+        </tr>
+        <tr>
+          <td class="dl">B2 评论壁垒500+</td>
+          <td class="dt">60%</td>
+          <td class="dm">500+评论占60%，高壁垒追赶</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:50%;background:#e8a838"></div></div></td>
+          <td class="ds">5.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·评分数分布</td>
+        </tr>
+        <tr>
+          <td class="dl">B3 内容品牌化A+/V</td>
+          <td class="dt">A+97%/V49%</td>
+          <td class="dm">A+97%+视频49%，均值73%</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:100%;background:#059669"></div></div></td>
+          <td class="ds">10.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·A+视频分布</td>
+        </tr>
+        <tr>
+          <td class="dl">C1 中国卖家占比</td>
+          <td class="dt">7%</td>
+          <td class="dm">中国卖家占7%，健康竞争</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:46%;background:#e8a838"></div></div></td>
+          <td class="ds">4.6/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·卖家所属地分布</td>
+        </tr>
+        <tr>
+          <td class="dl">C2 FBA同质化</td>
+          <td class="dt">82%</td>
+          <td class="dm">FBA占比82%，高同质化</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:46%;background:#e8a838"></div></div></td>
+          <td class="ds">4.6/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·卖家类型分布</td>
+        </tr>
+        <tr>
+          <td class="dl">D1 利润空间</td>
+          <td class="dt">ASP$19/毛利60%</td>
+          <td class="dm">ASP$19(4.8/5)+大类毛利率60%(3/5)</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:78%;background:#059669"></div></div></td>
+          <td class="ds">7.8/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">汇总·Iron</td>
+        </tr>
+        <tr>
+          <td class="dl">E1 供应链复杂度</td>
+          <td class="dt">复杂度24.1</td>
+          <td class="dm">大类Iron供应链复杂度24.1(中)</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:60%;background:#e8a838"></div></div></td>
+          <td class="ds">3.0/5</td>
+          <td class="dr">🟢</td>
+          <td class="dr">汇总·Iron</td>
+        </tr>
+        <tr>
+          <td class="dl">E2 售后/退货率</td>
+          <td class="dt">退货0.28%</td>
+          <td class="dm">大类Iron退货率0.28%(极低)</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:100%;background:#059669"></div></div></td>
+          <td class="ds">5.0/5</td>
+          <td class="dr">🟢</td>
+          <td class="dr">汇总·Iron</td>
+        </tr></table>
+      <div class="cjudge">
+        <div class="cjudge-item" style="border-left-color:#059669"><b>📊 市场白牌化</b><span>轻度白牌化</span><span class="subline">品牌格局分散但中国卖家介入不深，窗口期品类</span></div>
+        <div class="cjudge-item" style="border-left-color:#059669"><b>🇨🇳 中国卖家适合度</b><span>适合中国卖家进入，市场有中国卖家验证但竞争温和</span></div>
+        <div class="cjudge-item" style="border-left-color:#2563eb"><b>🚀 新品牌适合度</b><span>可尝试，但需强品牌化策略对抗老牌壁垒</span></div>
+        <div class="cjudge-item" style="border-left-color:#e8a838"><b>💰 长期利润</b><span>中等，需控制PPC成本维持净利</span></div>
+        <div class="cjudge-item" style="border-left-color:#059669"><b>🎯 推荐打法</b><span>品牌化差异化定位 ➔ 视频内容先发优势 ➔ 新品快速迭代抢占窗口</span></div>
+      </div>
+      <a class="clink" href="iron_gummies/细分类目分析报告-Iron Gummies-铁软糖_交互版.html" target="_blank">📋 查看细分报告 →</a>
+    </div>
+    <div class="card">
+      <div class="chd">
+        <span class="ctitle">#4 女性铁软糖 <small>Iron Gummies for Women</small></span>
+        <span class="cgrade" style="background:#2563eb">A级</span>
+        <span class="cscore">76.4<span class="cmax">/100</span></span>
+      </div>
+      <table class="dimtbl">
+        <tr>
+          <td class="dl">A1 市场规模</td>
+          <td class="dt">$5.2M/月</td>
+          <td class="dm">月销额5.2M</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:100%;background:#059669"></div></div></td>
+          <td class="ds">10.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·行业销售趋势</td>
+        </tr>
+        <tr>
+          <td class="dl">A2 增长趋势</td>
+          <td class="dt">+52%</td>
+          <td class="dm">半年环比销量增速+52%</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:100%;background:#059669"></div></div></td>
+          <td class="ds">10.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·行业销售趋势</td>
+        </tr>
+        <tr>
+          <td class="dl">A3 ≤12月新品占比</td>
+          <td class="dt">35%</td>
+          <td class="dm">≤12月新品占35%，偏离理想区间</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:73%;background:#059669"></div></div></td>
+          <td class="ds">7.3/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·上架时间分布</td>
+        </tr>
+        <tr>
+          <td class="dl">B1 品牌集中度BCR10</td>
+          <td class="dt">68%</td>
+          <td class="dm">BCR10=68%，偏高</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:92%;background:#059669"></div></div></td>
+          <td class="ds">9.2/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·品牌集中度</td>
+        </tr>
+        <tr>
+          <td class="dl">B2 评论壁垒500+</td>
+          <td class="dt">50%</td>
+          <td class="dm">500+评论占50%，高壁垒追赶</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:60%;background:#e8a838"></div></div></td>
+          <td class="ds">6.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·评分数分布</td>
+        </tr>
+        <tr>
+          <td class="dl">B3 内容品牌化A+/V</td>
+          <td class="dt">A+95%/V50%</td>
+          <td class="dm">A+95%+视频50%，均值72%</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:100%;background:#059669"></div></div></td>
+          <td class="ds">10.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·A+视频分布</td>
+        </tr>
+        <tr>
+          <td class="dl">C1 中国卖家占比</td>
+          <td class="dt">6%</td>
+          <td class="dm">中国卖家占6%，健康竞争</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:42%;background:#e8a838"></div></div></td>
+          <td class="ds">4.2/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·卖家所属地分布</td>
+        </tr>
+        <tr>
+          <td class="dl">C2 FBA同质化</td>
+          <td class="dt">85%</td>
+          <td class="dm">FBA占比85%，高同质化</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:40%;background:#e8a838"></div></div></td>
+          <td class="ds">4.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·卖家类型分布</td>
+        </tr>
+        <tr>
+          <td class="dl">D1 利润空间</td>
+          <td class="dt">ASP$19/毛利60%</td>
+          <td class="dm">ASP$19(4.7/5)+大类毛利率60%(3/5)</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:77%;background:#059669"></div></div></td>
+          <td class="ds">7.7/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">汇总·Iron</td>
+        </tr>
+        <tr>
+          <td class="dl">E1 供应链复杂度</td>
+          <td class="dt">复杂度24.1</td>
+          <td class="dm">大类Iron供应链复杂度24.1(中)</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:60%;background:#e8a838"></div></div></td>
+          <td class="ds">3.0/5</td>
+          <td class="dr">🟢</td>
+          <td class="dr">汇总·Iron</td>
+        </tr>
+        <tr>
+          <td class="dl">E2 售后/退货率</td>
+          <td class="dt">退货0.28%</td>
+          <td class="dm">大类Iron退货率0.28%(极低)</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:100%;background:#059669"></div></div></td>
+          <td class="ds">5.0/5</td>
+          <td class="dr">🟢</td>
+          <td class="dr">汇总·Iron</td>
+        </tr></table>
+      <div class="cjudge">
+        <div class="cjudge-item" style="border-left-color:#2563eb"><b>📊 市场白牌化</b><span>品牌化市场</span><span class="subline">品牌格局清晰，品牌辨识度高</span></div>
+        <div class="cjudge-item" style="border-left-color:#059669"><b>🇨🇳 中国卖家适合度</b><span>适合中国卖家进入，市场有中国卖家验证但竞争温和</span></div>
+        <div class="cjudge-item" style="border-left-color:#059669"><b>🚀 新品牌适合度</b><span>适合新品牌进入，品牌格局未固化+新品有机遇</span></div>
+        <div class="cjudge-item" style="border-left-color:#e8a838"><b>💰 长期利润</b><span>中等，需控制PPC成本维持净利</span></div>
+        <div class="cjudge-item" style="border-left-color:#e8a838"><b>🎯 推荐打法</b><span>新品快速迭代抢占窗口</span></div>
+      </div>
+      <a class="clink" href="iron_gummies_women/细分类目分析报告-Iron Gummies for Women-女性铁软糖_交互版.html" target="_blank">📋 查看细分报告 →</a>
+    </div>
+    <div class="card">
+      <div class="chd">
+        <span class="ctitle">#5 甘氨酸镁 <small>Magnesium Glycinate</small></span>
+        <span class="cgrade" style="background:#2563eb">A级</span>
+        <span class="cscore">76.0<span class="cmax">/100</span></span>
+      </div>
+      <table class="dimtbl">
+        <tr>
+          <td class="dl">A1 市场规模</td>
+          <td class="dt">$45.5M/月</td>
+          <td class="dm">月销额45.5M</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:100%;background:#059669"></div></div></td>
+          <td class="ds">10.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·行业销售趋势</td>
+        </tr>
+        <tr>
+          <td class="dl">A2 增长趋势</td>
+          <td class="dt">+90%</td>
+          <td class="dm">半年环比销量增速+90%</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:100%;background:#059669"></div></div></td>
+          <td class="ds">10.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·行业销售趋势</td>
+        </tr>
+        <tr>
+          <td class="dl">A3 ≤12月新品占比</td>
+          <td class="dt">25%</td>
+          <td class="dm">≤12月新品占25%，健康区间10-25%</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:100%;background:#059669"></div></div></td>
+          <td class="ds">10.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·上架时间分布</td>
+        </tr>
+        <tr>
+          <td class="dl">B1 品牌集中度BCR10</td>
+          <td class="dt">61%</td>
+          <td class="dm">BCR10=61%，健康区间40-65%</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:100%;background:#059669"></div></div></td>
+          <td class="ds">10.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·品牌集中度</td>
+        </tr>
+        <tr>
+          <td class="dl">B2 评论壁垒500+</td>
+          <td class="dt">90%</td>
+          <td class="dm">500+评论占90%，高壁垒极难追赶</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:20%;background:#e11d48"></div></div></td>
+          <td class="ds">2.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·评分数分布</td>
+        </tr>
+        <tr>
+          <td class="dl">B3 内容品牌化A+/V</td>
+          <td class="dt">A+96%/V67%</td>
+          <td class="dm">A+96%+视频67%，均值82%</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:96%;background:#059669"></div></div></td>
+          <td class="ds">9.6/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·A+视频分布</td>
+        </tr>
+        <tr>
+          <td class="dl">C1 中国卖家占比</td>
+          <td class="dt">2%</td>
+          <td class="dm">中国卖家占2%，市场待验证</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:20%;background:#e11d48"></div></div></td>
+          <td class="ds">2.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·卖家所属地分布</td>
+        </tr>
+        <tr>
+          <td class="dl">C2 FBA同质化</td>
+          <td class="dt">78%</td>
+          <td class="dm">FBA占比78%，高同质化</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:54%;background:#e8a838"></div></div></td>
+          <td class="ds">5.4/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·卖家类型分布</td>
+        </tr>
+        <tr>
+          <td class="dl">D1 利润空间</td>
+          <td class="dt">ASP$20/毛利63%</td>
+          <td class="dm">ASP$20(5/5)+大类毛利率63%(4/5)</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:90%;background:#059669"></div></div></td>
+          <td class="ds">9.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">汇总·Magnesium</td>
+        </tr>
+        <tr>
+          <td class="dl">E1 供应链复杂度</td>
+          <td class="dt">复杂度22.5</td>
+          <td class="dm">大类Magnesium供应链复杂度22.5(中)</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:60%;background:#e8a838"></div></div></td>
+          <td class="ds">3.0/5</td>
+          <td class="dr">🟢</td>
+          <td class="dr">汇总·Magnesium</td>
+        </tr>
+        <tr>
+          <td class="dl">E2 售后/退货率</td>
+          <td class="dt">退货0.28%</td>
+          <td class="dm">大类Magnesium退货率0.28%(极低)</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:100%;background:#059669"></div></div></td>
+          <td class="ds">5.0/5</td>
+          <td class="dr">🟢</td>
+          <td class="dr">汇总·Magnesium</td>
+        </tr></table>
+      <div class="cjudge">
+        <div class="cjudge-item" style="border-left-color:#2563eb"><b>📊 市场白牌化</b><span>品牌化市场</span><span class="subline">品牌格局清晰，品牌辨识度高</span></div>
+        <div class="cjudge-item" style="border-left-color:#2563eb"><b>🇨🇳 中国卖家适合度</b><span>市场待中国卖家验证，属于先行者机会</span></div>
+        <div class="cjudge-item" style="border-left-color:#e11d48"><b>🚀 新品牌适合度</b><span>难度较高，市场集中度高+评论壁垒强</span></div>
+        <div class="cjudge-item" style="border-left-color:#059669"><b>💰 长期利润</b><span>良好，ASP健康且价格战程度低</span></div>
+        <div class="cjudge-item" style="border-left-color:#059669"><b>🎯 推荐打法</b><span>强Review积累策略 ➔ 中国供应链成本优势</span></div>
+      </div>
+      <a class="clink" href="mg_glycinate/细分类目分析报告-Magnesium Glycinate-甘氨酸镁_交互版.html" target="_blank">📋 查看细分报告 →</a>
+    </div>
+    <div class="card">
+      <div class="chd">
+        <span class="ctitle">#6 甘氨酸镁软糖儿童 <small>Mg Glycinate Kids Gummies</small></span>
+        <span class="cgrade" style="background:#2563eb">A级</span>
+        <span class="cscore">75.5<span class="cmax">/100</span></span>
+      </div>
+      <table class="dimtbl">
+        <tr>
+          <td class="dl">A1 市场规模</td>
+          <td class="dt">$19.0M/月</td>
+          <td class="dm">月销额19.0M</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:100%;background:#059669"></div></div></td>
+          <td class="ds">10.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·行业销售趋势</td>
+        </tr>
+        <tr>
+          <td class="dl">A2 增长趋势</td>
+          <td class="dt">+119%</td>
+          <td class="dm">半年环比销量增速+119%</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:100%;background:#059669"></div></div></td>
+          <td class="ds">10.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·行业销售趋势</td>
+        </tr>
+        <tr>
+          <td class="dl">A3 ≤12月新品占比</td>
+          <td class="dt">41%</td>
+          <td class="dm">≤12月新品占41%，偏离理想区间</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:58%;background:#e8a838"></div></div></td>
+          <td class="ds">5.8/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·上架时间分布</td>
+        </tr>
+        <tr>
+          <td class="dl">B1 品牌集中度BCR10</td>
+          <td class="dt">61%</td>
+          <td class="dm">BCR10=61%，健康区间40-65%</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:100%;background:#059669"></div></div></td>
+          <td class="ds">10.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·品牌集中度</td>
+        </tr>
+        <tr>
+          <td class="dl">B2 评论壁垒500+</td>
+          <td class="dt">65%</td>
+          <td class="dm">500+评论占65%，高壁垒追赶</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:45%;background:#e8a838"></div></div></td>
+          <td class="ds">4.5/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·评分数分布</td>
+        </tr>
+        <tr>
+          <td class="dl">B3 内容品牌化A+/V</td>
+          <td class="dt">A+96%/V61%</td>
+          <td class="dm">A+96%+视频61%，均值78%</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:100%;background:#059669"></div></div></td>
+          <td class="ds">10.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·A+视频分布</td>
+        </tr>
+        <tr>
+          <td class="dl">C1 中国卖家占比</td>
+          <td class="dt">3%</td>
+          <td class="dm">中国卖家占3%，市场待验证</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:30%;background:#e11d48"></div></div></td>
+          <td class="ds">3.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·卖家所属地分布</td>
+        </tr>
+        <tr>
+          <td class="dl">C2 FBA同质化</td>
+          <td class="dt">77%</td>
+          <td class="dm">FBA占比77%，高同质化</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:56%;background:#e8a838"></div></div></td>
+          <td class="ds">5.6/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·卖家类型分布</td>
+        </tr>
+        <tr>
+          <td class="dl">D1 利润空间</td>
+          <td class="dt">ASP$19/毛利63%</td>
+          <td class="dm">ASP$19(4.6/5)+大类毛利率63%(4/5)</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:86%;background:#059669"></div></div></td>
+          <td class="ds">8.6/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">汇总·Magnesium</td>
+        </tr>
+        <tr>
+          <td class="dl">E1 供应链复杂度</td>
+          <td class="dt">复杂度22.5</td>
+          <td class="dm">大类Magnesium供应链复杂度22.5(中)</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:60%;background:#e8a838"></div></div></td>
+          <td class="ds">3.0/5</td>
+          <td class="dr">🟢</td>
+          <td class="dr">汇总·Magnesium</td>
+        </tr>
+        <tr>
+          <td class="dl">E2 售后/退货率</td>
+          <td class="dt">退货0.28%</td>
+          <td class="dm">大类Magnesium退货率0.28%(极低)</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:100%;background:#059669"></div></div></td>
+          <td class="ds">5.0/5</td>
+          <td class="dr">🟢</td>
+          <td class="dr">汇总·Magnesium</td>
+        </tr></table>
+      <div class="cjudge">
+        <div class="cjudge-item" style="border-left-color:#2563eb"><b>📊 市场白牌化</b><span>品牌化市场</span><span class="subline">品牌格局清晰，品牌辨识度高</span></div>
+        <div class="cjudge-item" style="border-left-color:#2563eb"><b>🇨🇳 中国卖家适合度</b><span>市场待中国卖家验证，属于先行者机会</span></div>
+        <div class="cjudge-item" style="border-left-color:#2563eb"><b>🚀 新品牌适合度</b><span>可尝试，但需强品牌化策略对抗老牌壁垒</span></div>
+        <div class="cjudge-item" style="border-left-color:#e8a838"><b>💰 长期利润</b><span>中等，需控制PPC成本维持净利</span></div>
+        <div class="cjudge-item" style="border-left-color:#059669"><b>🎯 推荐打法</b><span>强Review积累策略 ➔ 新品快速迭代抢占窗口 ➔ 中国供应链成本优势</span></div>
+      </div>
+      <a class="clink" href="mg_glycinate_kids/细分类目分析报告-Mg Glycinate Kids Gummies-甘氨酸镁软糖儿童_交互版.html" target="_blank">📋 查看细分报告 →</a>
+    </div>
+    <div class="card">
+      <div class="chd">
+        <span class="ctitle">#7 胶原蛋白肽软糖 <small>Collagen Peptides Gummies</small></span>
+        <span class="cgrade" style="background:#2563eb">A级</span>
+        <span class="cscore">74.2<span class="cmax">/100</span></span>
+      </div>
+      <table class="dimtbl">
+        <tr>
+          <td class="dl">A1 市场规模</td>
+          <td class="dt">$69.3M/月</td>
+          <td class="dm">月销额69.3M</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:100%;background:#059669"></div></div></td>
+          <td class="ds">10.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·行业销售趋势</td>
+        </tr>
+        <tr>
+          <td class="dl">A2 增长趋势</td>
+          <td class="dt">+46%</td>
+          <td class="dm">半年环比销量增速+46%</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:96%;background:#059669"></div></div></td>
+          <td class="ds">9.6/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·行业销售趋势</td>
+        </tr>
+        <tr>
+          <td class="dl">A3 ≤12月新品占比</td>
+          <td class="dt">13%</td>
+          <td class="dm">≤12月新品占13%，健康区间10-25%</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:100%;background:#059669"></div></div></td>
+          <td class="ds">10.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·上架时间分布</td>
+        </tr>
+        <tr>
+          <td class="dl">B1 品牌集中度BCR10</td>
+          <td class="dt">70%</td>
+          <td class="dm">BCR10=70%，偏高</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:86%;background:#059669"></div></div></td>
+          <td class="ds">8.6/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·品牌集中度</td>
+        </tr>
+        <tr>
+          <td class="dl">B2 评论壁垒500+</td>
+          <td class="dt">95%</td>
+          <td class="dm">500+评论占95%，高壁垒极难追赶</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:10%;background:#e11d48"></div></div></td>
+          <td class="ds">1.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·评分数分布</td>
+        </tr>
+        <tr>
+          <td class="dl">B3 内容品牌化A+/V</td>
+          <td class="dt">A+96%/V79%</td>
+          <td class="dm">A+96%+视频79%，均值88%</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:80%;background:#059669"></div></div></td>
+          <td class="ds">8.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·A+视频分布</td>
+        </tr>
+        <tr>
+          <td class="dl">C1 中国卖家占比</td>
+          <td class="dt">1%</td>
+          <td class="dm">中国卖家占1%，市场待验证</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:20%;background:#e11d48"></div></div></td>
+          <td class="ds">2.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·卖家所属地分布</td>
+        </tr>
+        <tr>
+          <td class="dl">C2 FBA同质化</td>
+          <td class="dt">75%</td>
+          <td class="dm">FBA占比75%，高同质化</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:60%;background:#e8a838"></div></div></td>
+          <td class="ds">6.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·卖家类型分布</td>
+        </tr>
+        <tr>
+          <td class="dl">D1 利润空间</td>
+          <td class="dt">ASP$29/毛利68%</td>
+          <td class="dm">ASP$29(5/5)+大类毛利率68%(5/5)</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:100%;background:#059669"></div></div></td>
+          <td class="ds">10.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">汇总·Collagen</td>
+        </tr>
+        <tr>
+          <td class="dl">E1 供应链复杂度</td>
+          <td class="dt">复杂度18.7</td>
+          <td class="dm">大类Collagen供应链复杂度18.7(低)</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:80%;background:#059669"></div></div></td>
+          <td class="ds">4.0/5</td>
+          <td class="dr">🟢</td>
+          <td class="dr">汇总·Collagen</td>
+        </tr>
+        <tr>
+          <td class="dl">E2 售后/退货率</td>
+          <td class="dt">退货0.27%</td>
+          <td class="dm">大类Collagen退货率0.27%(极低)</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:100%;background:#059669"></div></div></td>
+          <td class="ds">5.0/5</td>
+          <td class="dr">🟢</td>
+          <td class="dr">汇总·Collagen</td>
+        </tr></table>
+      <div class="cjudge">
+        <div class="cjudge-item" style="border-left-color:#2563eb"><b>📊 市场白牌化</b><span>品牌化市场</span><span class="subline">品牌格局清晰，品牌辨识度高</span></div>
+        <div class="cjudge-item" style="border-left-color:#2563eb"><b>🇨🇳 中国卖家适合度</b><span>市场待中国卖家验证，属于先行者机会</span></div>
+        <div class="cjudge-item" style="border-left-color:#e11d48"><b>🚀 新品牌适合度</b><span>难度较高，市场集中度高+评论壁垒强</span></div>
+        <div class="cjudge-item" style="border-left-color:#059669"><b>💰 长期利润</b><span>良好，ASP健康且价格战程度低</span></div>
+        <div class="cjudge-item" style="border-left-color:#059669"><b>🎯 推荐打法</b><span>强Review积累策略 ➔ 中国供应链成本优势 ➔ Premium高端化路线</span></div>
+      </div>
+      <a class="clink" href="collagen_peptide_gummies/细分类目分析报告-Collagen Peptides Gummies-胶原蛋白肽软糖_交互版.html" target="_blank">📋 查看细分报告 →</a>
+    </div>
+    <div class="card">
+      <div class="chd">
+        <span class="ctitle">#8 维生素软糖 <small>Vitamin Gummies</small></span>
+        <span class="cgrade" style="background:#2563eb">A级</span>
+        <span class="cscore">73.9<span class="cmax">/100</span></span>
+      </div>
+      <table class="dimtbl">
+        <tr>
+          <td class="dl">A1 市场规模</td>
+          <td class="dt">$50.9M/月</td>
+          <td class="dm">月销额50.9M</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:100%;background:#059669"></div></div></td>
+          <td class="ds">10.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·行业销售趋势</td>
+        </tr>
+        <tr>
+          <td class="dl">A2 增长趋势</td>
+          <td class="dt">+81%</td>
+          <td class="dm">半年环比销量增速+81%</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:100%;background:#059669"></div></div></td>
+          <td class="ds">10.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·行业销售趋势</td>
+        </tr>
+        <tr>
+          <td class="dl">A3 ≤12月新品占比</td>
+          <td class="dt">19%</td>
+          <td class="dm">≤12月新品占19%，健康区间10-25%</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:100%;background:#059669"></div></div></td>
+          <td class="ds">10.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·上架时间分布</td>
+        </tr>
+        <tr>
+          <td class="dl">B1 品牌集中度BCR10</td>
+          <td class="dt">68%</td>
+          <td class="dm">BCR10=68%，偏高</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:92%;background:#059669"></div></div></td>
+          <td class="ds">9.2/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·品牌集中度</td>
+        </tr>
+        <tr>
+          <td class="dl">B2 评论壁垒500+</td>
+          <td class="dt">99%</td>
+          <td class="dm">500+评论占99%，高壁垒极难追赶</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:10%;background:#e11d48"></div></div></td>
+          <td class="ds">1.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·评分数分布</td>
+        </tr>
+        <tr>
+          <td class="dl">B3 内容品牌化A+/V</td>
+          <td class="dt">A+96%/V75%</td>
+          <td class="dm">A+96%+视频75%，均值86%</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:85%;background:#059669"></div></div></td>
+          <td class="ds">8.5/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·A+视频分布</td>
+        </tr>
+        <tr>
+          <td class="dl">C1 中国卖家占比</td>
+          <td class="dt">0%</td>
+          <td class="dm">中国卖家占0%，市场待验证</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:20%;background:#e11d48"></div></div></td>
+          <td class="ds">2.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·卖家所属地分布</td>
+        </tr>
+        <tr>
+          <td class="dl">C2 FBA同质化</td>
+          <td class="dt">26%</td>
+          <td class="dm">FBA占比26%，低同质化</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:100%;background:#059669"></div></div></td>
+          <td class="ds">10.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·卖家类型分布</td>
+        </tr>
+        <tr>
+          <td class="dl">D1 利润空间</td>
+          <td class="dt">ASP$16/毛利62%</td>
+          <td class="dm">ASP$16(3.2/5)+大类毛利率62%(3/5)</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:62%;background:#e8a838"></div></div></td>
+          <td class="ds">6.2/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">汇总·Multivitamins</td>
+        </tr>
+        <tr>
+          <td class="dl">E1 供应链复杂度</td>
+          <td class="dt">复杂度23.6</td>
+          <td class="dm">大类Multivitamins供应链复杂度23.6(中)</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:60%;background:#e8a838"></div></div></td>
+          <td class="ds">3.0/5</td>
+          <td class="dr">🟢</td>
+          <td class="dr">汇总·Multivitamins</td>
+        </tr>
+        <tr>
+          <td class="dl">E2 售后/退货率</td>
+          <td class="dt">退货0.29%</td>
+          <td class="dm">大类Multivitamins退货率0.29%(极低)</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:80%;background:#059669"></div></div></td>
+          <td class="ds">4.0/5</td>
+          <td class="dr">🟢</td>
+          <td class="dr">汇总·Multivitamins</td>
+        </tr></table>
+      <div class="cjudge">
+        <div class="cjudge-item" style="border-left-color:#2563eb"><b>📊 市场白牌化</b><span>品牌化市场</span><span class="subline">品牌格局清晰，品牌辨识度高</span></div>
+        <div class="cjudge-item" style="border-left-color:#2563eb"><b>🇨🇳 中国卖家适合度</b><span>市场待中国卖家验证，属于先行者机会</span></div>
+        <div class="cjudge-item" style="border-left-color:#e11d48"><b>🚀 新品牌适合度</b><span>难度较高，市场集中度高+评论壁垒强</span></div>
+        <div class="cjudge-item" style="border-left-color:#e8a838"><b>💰 长期利润</b><span>中等，需控制PPC成本维持净利</span></div>
+        <div class="cjudge-item" style="border-left-color:#059669"><b>🎯 推荐打法</b><span>强Review积累策略 ➔ 中国供应链成本优势</span></div>
+      </div>
+      <a class="clink" href="vitamin_gummies/细分类目分析报告-Vitamin Gummies-维生素软糖_交互版.html" target="_blank">📋 查看细分报告 →</a>
+    </div>
+    <div class="card">
+      <div class="chd">
+        <span class="ctitle">#9 胶原蛋白肽 <small>Collagen Peptides</small></span>
+        <span class="cgrade" style="background:#2563eb">A级</span>
+        <span class="cscore">72.8<span class="cmax">/100</span></span>
+      </div>
+      <table class="dimtbl">
+        <tr>
+          <td class="dl">A1 市场规模</td>
+          <td class="dt">$50.2M/月</td>
+          <td class="dm">月销额50.2M</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:100%;background:#059669"></div></div></td>
+          <td class="ds">10.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·行业销售趋势</td>
+        </tr>
+        <tr>
+          <td class="dl">A2 增长趋势</td>
+          <td class="dt">+17%</td>
+          <td class="dm">半年环比销量增速+17%</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:62%;background:#e8a838"></div></div></td>
+          <td class="ds">6.2/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·行业销售趋势</td>
+        </tr>
+        <tr>
+          <td class="dl">A3 ≤12月新品占比</td>
+          <td class="dt">10%</td>
+          <td class="dm">≤12月新品占10%，健康区间10-25%</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:100%;background:#059669"></div></div></td>
+          <td class="ds">10.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·上架时间分布</td>
+        </tr>
+        <tr>
+          <td class="dl">B1 品牌集中度BCR10</td>
+          <td class="dt">60%</td>
+          <td class="dm">BCR10=60%，健康区间40-65%</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:100%;background:#059669"></div></div></td>
+          <td class="ds">10.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·品牌集中度</td>
+        </tr>
+        <tr>
+          <td class="dl">B2 评论壁垒500+</td>
+          <td class="dt">98%</td>
+          <td class="dm">500+评论占98%，高壁垒极难追赶</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:10%;background:#e11d48"></div></div></td>
+          <td class="ds">1.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·评分数分布</td>
+        </tr>
+        <tr>
+          <td class="dl">B3 内容品牌化A+/V</td>
+          <td class="dt">A+94%/V69%</td>
+          <td class="dm">A+94%+视频69%，均值82%</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:96%;background:#059669"></div></div></td>
+          <td class="ds">9.6/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·A+视频分布</td>
+        </tr>
+        <tr>
+          <td class="dl">C1 中国卖家占比</td>
+          <td class="dt">1%</td>
+          <td class="dm">中国卖家占1%，市场待验证</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:20%;background:#e11d48"></div></div></td>
+          <td class="ds">2.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·卖家所属地分布</td>
+        </tr>
+        <tr>
+          <td class="dl">C2 FBA同质化</td>
+          <td class="dt">80%</td>
+          <td class="dm">FBA占比80%，高同质化</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:50%;background:#e8a838"></div></div></td>
+          <td class="ds">5.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·卖家类型分布</td>
+        </tr>
+        <tr>
+          <td class="dl">D1 利润空间</td>
+          <td class="dt">ASP$33/毛利68%</td>
+          <td class="dm">ASP$33(5/5)+大类毛利率68%(5/5)</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:100%;background:#059669"></div></div></td>
+          <td class="ds">10.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">汇总·Collagen</td>
+        </tr>
+        <tr>
+          <td class="dl">E1 供应链复杂度</td>
+          <td class="dt">复杂度18.7</td>
+          <td class="dm">大类Collagen供应链复杂度18.7(低)</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:80%;background:#059669"></div></div></td>
+          <td class="ds">4.0/5</td>
+          <td class="dr">🟢</td>
+          <td class="dr">汇总·Collagen</td>
+        </tr>
+        <tr>
+          <td class="dl">E2 售后/退货率</td>
+          <td class="dt">退货0.27%</td>
+          <td class="dm">大类Collagen退货率0.27%(极低)</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:100%;background:#059669"></div></div></td>
+          <td class="ds">5.0/5</td>
+          <td class="dr">🟢</td>
+          <td class="dr">汇总·Collagen</td>
+        </tr></table>
+      <div class="cjudge">
+        <div class="cjudge-item" style="border-left-color:#2563eb"><b>📊 市场白牌化</b><span>品牌化市场</span><span class="subline">品牌格局清晰，品牌辨识度高</span></div>
+        <div class="cjudge-item" style="border-left-color:#2563eb"><b>🇨🇳 中国卖家适合度</b><span>市场待中国卖家验证，属于先行者机会</span></div>
+        <div class="cjudge-item" style="border-left-color:#e11d48"><b>🚀 新品牌适合度</b><span>难度较高，市场集中度高+评论壁垒强</span></div>
+        <div class="cjudge-item" style="border-left-color:#059669"><b>💰 长期利润</b><span>良好，ASP健康且价格战程度低</span></div>
+        <div class="cjudge-item" style="border-left-color:#059669"><b>🎯 推荐打法</b><span>强Review积累策略 ➔ 中国供应链成本优势 ➔ Premium高端化路线</span></div>
+      </div>
+      <a class="clink" href="collagen_peptides/细分类目分析报告-Collagen Peptides-胶原蛋白肽_交互版.html" target="_blank">📋 查看细分报告 →</a>
+    </div>
+    <div class="card">
+      <div class="chd">
+        <span class="ctitle">#10 甘氨酸镁软糖 <small>Magnesium Glycinate Gummies</small></span>
+        <span class="cgrade" style="background:#2563eb">A级</span>
+        <span class="cscore">72.4<span class="cmax">/100</span></span>
+      </div>
+      <table class="dimtbl">
+        <tr>
+          <td class="dl">A1 市场规模</td>
+          <td class="dt">$27.9M/月</td>
+          <td class="dm">月销额27.9M</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:100%;background:#059669"></div></div></td>
+          <td class="ds">10.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·行业销售趋势</td>
+        </tr>
+        <tr>
+          <td class="dl">A2 增长趋势</td>
+          <td class="dt">+117%</td>
+          <td class="dm">半年环比销量增速+117%</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:100%;background:#059669"></div></div></td>
+          <td class="ds">10.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·行业销售趋势</td>
+        </tr>
+        <tr>
+          <td class="dl">A3 ≤12月新品占比</td>
+          <td class="dt">52%</td>
+          <td class="dm">≤12月新品占52%，偏离理想区间</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:36%;background:#e11d48"></div></div></td>
+          <td class="ds">3.6/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·上架时间分布</td>
+        </tr>
+        <tr>
+          <td class="dl">B1 品牌集中度BCR10</td>
+          <td class="dt">79%</td>
+          <td class="dm">BCR10=79%，偏高</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:63%;background:#e8a838"></div></div></td>
+          <td class="ds">6.3/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·品牌集中度</td>
+        </tr>
+        <tr>
+          <td class="dl">B2 评论壁垒500+</td>
+          <td class="dt">50%</td>
+          <td class="dm">500+评论占50%，高壁垒追赶</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:60%;background:#e8a838"></div></div></td>
+          <td class="ds">6.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·评分数分布</td>
+        </tr>
+        <tr>
+          <td class="dl">B3 内容品牌化A+/V</td>
+          <td class="dt">A+96%/V64%</td>
+          <td class="dm">A+96%+视频64%，均值80%</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:100%;background:#059669"></div></div></td>
+          <td class="ds">10.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·A+视频分布</td>
+        </tr>
+        <tr>
+          <td class="dl">C1 中国卖家占比</td>
+          <td class="dt">5%</td>
+          <td class="dm">中国卖家占5%，健康竞争</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:41%;background:#e8a838"></div></div></td>
+          <td class="ds">4.1/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·卖家所属地分布</td>
+        </tr>
+        <tr>
+          <td class="dl">C2 FBA同质化</td>
+          <td class="dt">78%</td>
+          <td class="dm">FBA占比78%，高同质化</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:54%;background:#e8a838"></div></div></td>
+          <td class="ds">5.4/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·卖家类型分布</td>
+        </tr>
+        <tr>
+          <td class="dl">D1 利润空间</td>
+          <td class="dt">ASP$21/毛利63%</td>
+          <td class="dm">ASP$21(5/5)+大类毛利率63%(4/5)</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:90%;background:#059669"></div></div></td>
+          <td class="ds">9.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">汇总·Magnesium</td>
+        </tr>
+        <tr>
+          <td class="dl">E1 供应链复杂度</td>
+          <td class="dt">复杂度22.5</td>
+          <td class="dm">大类Magnesium供应链复杂度22.5(中)</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:60%;background:#e8a838"></div></div></td>
+          <td class="ds">3.0/5</td>
+          <td class="dr">🟢</td>
+          <td class="dr">汇总·Magnesium</td>
+        </tr>
+        <tr>
+          <td class="dl">E2 售后/退货率</td>
+          <td class="dt">退货0.28%</td>
+          <td class="dm">大类Magnesium退货率0.28%(极低)</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:100%;background:#059669"></div></div></td>
+          <td class="ds">5.0/5</td>
+          <td class="dr">🟢</td>
+          <td class="dr">汇总·Magnesium</td>
+        </tr></table>
+      <div class="cjudge">
+        <div class="cjudge-item" style="border-left-color:#2563eb"><b>📊 市场白牌化</b><span>品牌化市场</span><span class="subline">品牌格局清晰，品牌辨识度高</span></div>
+        <div class="cjudge-item" style="border-left-color:#059669"><b>🇨🇳 中国卖家适合度</b><span>适合中国卖家进入，市场有中国卖家验证但竞争温和</span></div>
+        <div class="cjudge-item" style="border-left-color:#e11d48"><b>🚀 新品牌适合度</b><span>难度较高，市场集中度高+评论壁垒强</span></div>
+        <div class="cjudge-item" style="border-left-color:#059669"><b>💰 长期利润</b><span>良好，ASP健康且价格战程度低</span></div>
+        <div class="cjudge-item" style="border-left-color:#e8a838"><b>🎯 推荐打法</b><span>新品快速迭代抢占窗口</span></div>
+      </div>
+      <a class="clink" href="mg_glycinate_gummies/细分类目分析报告-Magnesium Glycinate Gummies-甘氨酸镁软糖_交互版.html" target="_blank">📋 查看细分报告 →</a>
+    </div>
+    <div class="card">
+      <div class="chd">
+        <span class="ctitle">#11 女性益生菌 <small>Probiotics for Women</small></span>
+        <span class="cgrade" style="background:#2563eb">A级</span>
+        <span class="cscore">71.8<span class="cmax">/100</span></span>
+      </div>
+      <table class="dimtbl">
+        <tr>
+          <td class="dl">A1 市场规模</td>
+          <td class="dt">$54.1M/月</td>
+          <td class="dm">月销额54.1M</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:100%;background:#059669"></div></div></td>
+          <td class="ds">10.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·行业销售趋势</td>
+        </tr>
+        <tr>
+          <td class="dl">A2 增长趋势</td>
+          <td class="dt">+19%</td>
+          <td class="dm">半年环比销量增速+19%</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:66%;background:#e8a838"></div></div></td>
+          <td class="ds">6.6/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·行业销售趋势</td>
+        </tr>
+        <tr>
+          <td class="dl">A3 ≤12月新品占比</td>
+          <td class="dt">10%</td>
+          <td class="dm">≤12月新品占10%，健康区间10-25%</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:100%;background:#059669"></div></div></td>
+          <td class="ds">10.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·上架时间分布</td>
+        </tr>
+        <tr>
+          <td class="dl">B1 品牌集中度BCR10</td>
+          <td class="dt">72%</td>
+          <td class="dm">BCR10=72%，偏高</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:83%;background:#059669"></div></div></td>
+          <td class="ds">8.3/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·品牌集中度</td>
+        </tr>
+        <tr>
+          <td class="dl">B2 评论壁垒500+</td>
+          <td class="dt">99%</td>
+          <td class="dm">500+评论占99%，高壁垒极难追赶</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:10%;background:#e11d48"></div></div></td>
+          <td class="ds">1.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·评分数分布</td>
+        </tr>
+        <tr>
+          <td class="dl">B3 内容品牌化A+/V</td>
+          <td class="dt">A+99%/V85%</td>
+          <td class="dm">A+99%+视频85%，均值92%</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:68%;background:#e8a838"></div></div></td>
+          <td class="ds">6.8/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·A+视频分布</td>
+        </tr>
+        <tr>
+          <td class="dl">C1 中国卖家占比</td>
+          <td class="dt">2%</td>
+          <td class="dm">中国卖家占2%，市场待验证</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:21%;background:#e11d48"></div></div></td>
+          <td class="ds">2.1/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·卖家所属地分布</td>
+        </tr>
+        <tr>
+          <td class="dl">C2 FBA同质化</td>
+          <td class="dt">50%</td>
+          <td class="dm">FBA占比50%，低同质化</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:100%;background:#059669"></div></div></td>
+          <td class="ds">10.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·卖家类型分布</td>
+        </tr>
+        <tr>
+          <td class="dl">D1 利润空间</td>
+          <td class="dt">ASP$21/毛利70%</td>
+          <td class="dm">ASP$21(5/5)+大类毛利率70%(5/5)</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:100%;background:#059669"></div></div></td>
+          <td class="ds">10.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">汇总·Probiotics</td>
+        </tr>
+        <tr>
+          <td class="dl">E1 供应链复杂度</td>
+          <td class="dt">复杂度24.0</td>
+          <td class="dm">大类Probiotics供应链复杂度24.0(中)</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:60%;background:#e8a838"></div></div></td>
+          <td class="ds">3.0/5</td>
+          <td class="dr">🟢</td>
+          <td class="dr">汇总·Probiotics</td>
+        </tr>
+        <tr>
+          <td class="dl">E2 售后/退货率</td>
+          <td class="dt">退货0.29%</td>
+          <td class="dm">大类Probiotics退货率0.29%(极低)</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:80%;background:#059669"></div></div></td>
+          <td class="ds">4.0/5</td>
+          <td class="dr">🟢</td>
+          <td class="dr">汇总·Probiotics</td>
+        </tr></table>
+      <div class="cjudge">
+        <div class="cjudge-item" style="border-left-color:#2563eb"><b>📊 市场白牌化</b><span>品牌化市场</span><span class="subline">品牌格局清晰，品牌辨识度高</span></div>
+        <div class="cjudge-item" style="border-left-color:#2563eb"><b>🇨🇳 中国卖家适合度</b><span>市场待中国卖家验证，属于先行者机会</span></div>
+        <div class="cjudge-item" style="border-left-color:#e11d48"><b>🚀 新品牌适合度</b><span>难度较高，市场集中度高+评论壁垒强</span></div>
+        <div class="cjudge-item" style="border-left-color:#059669"><b>💰 长期利润</b><span>良好，ASP健康且价格战程度低</span></div>
+        <div class="cjudge-item" style="border-left-color:#059669"><b>🎯 推荐打法</b><span>强Review积累策略 ➔ 中国供应链成本优势</span></div>
+      </div>
+      <a class="clink" href="probiotics_women/细分类目分析报告-Probiotics for Women-女性益生菌_交互版.html" target="_blank">📋 查看细分报告 →</a>
+    </div>
+    <div class="card">
+      <div class="chd">
+        <span class="ctitle">#12 女性蔓越莓软糖 <small>Cranberry Gummies for Women</small></span>
+        <span class="cgrade" style="background:#2563eb">A级</span>
+        <span class="cscore">71.4<span class="cmax">/100</span></span>
+      </div>
+      <table class="dimtbl">
+        <tr>
+          <td class="dl">A1 市场规模</td>
+          <td class="dt">$19.5M/月</td>
+          <td class="dm">月销额19.5M</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:100%;background:#059669"></div></div></td>
+          <td class="ds">10.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·行业销售趋势</td>
+        </tr>
+        <tr>
+          <td class="dl">A2 增长趋势</td>
+          <td class="dt">+45%</td>
+          <td class="dm">半年环比销量增速+45%</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:95%;background:#059669"></div></div></td>
+          <td class="ds">9.5/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·行业销售趋势</td>
+        </tr>
+        <tr>
+          <td class="dl">A3 ≤12月新品占比</td>
+          <td class="dt">20%</td>
+          <td class="dm">≤12月新品占20%，健康区间10-25%</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:100%;background:#059669"></div></div></td>
+          <td class="ds">10.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·上架时间分布</td>
+        </tr>
+        <tr>
+          <td class="dl">B1 品牌集中度BCR10</td>
+          <td class="dt">75%</td>
+          <td class="dm">BCR10=75%，偏高</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:74%;background:#059669"></div></div></td>
+          <td class="ds">7.4/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·品牌集中度</td>
+        </tr>
+        <tr>
+          <td class="dl">B2 评论壁垒500+</td>
+          <td class="dt">92%</td>
+          <td class="dm">500+评论占92%，高壁垒极难追赶</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:10%;background:#e11d48"></div></div></td>
+          <td class="ds">1.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·评分数分布</td>
+        </tr>
+        <tr>
+          <td class="dl">B3 内容品牌化A+/V</td>
+          <td class="dt">A+98%/V73%</td>
+          <td class="dm">A+98%+视频73%，均值86%</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:85%;background:#059669"></div></div></td>
+          <td class="ds">8.5/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·A+视频分布</td>
+        </tr>
+        <tr>
+          <td class="dl">C1 中国卖家占比</td>
+          <td class="dt">1%</td>
+          <td class="dm">中国卖家占1%，市场待验证</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:20%;background:#e11d48"></div></div></td>
+          <td class="ds">2.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·卖家所属地分布</td>
+        </tr>
+        <tr>
+          <td class="dl">C2 FBA同质化</td>
+          <td class="dt">54%</td>
+          <td class="dm">FBA占比54%，低同质化</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:94%;background:#059669"></div></div></td>
+          <td class="ds">9.4/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·卖家类型分布</td>
+        </tr>
+        <tr>
+          <td class="dl">D1 利润空间</td>
+          <td class="dt">ASP$16/毛利63%</td>
+          <td class="dm">ASP$16(3.6/5)+大类毛利率63%(4/5)</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:76%;background:#059669"></div></div></td>
+          <td class="ds">7.6/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">汇总·Cranberry</td>
+        </tr>
+        <tr>
+          <td class="dl">E1 供应链复杂度</td>
+          <td class="dt">复杂度30.1</td>
+          <td class="dm">大类Cranberry供应链复杂度30.1(高)</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:20%;background:#e11d48"></div></div></td>
+          <td class="ds">1.0/5</td>
+          <td class="dr">🟢</td>
+          <td class="dr">汇总·Cranberry</td>
+        </tr>
+        <tr>
+          <td class="dl">E2 售后/退货率</td>
+          <td class="dt">退货0.27%</td>
+          <td class="dm">大类Cranberry退货率0.27%(极低)</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:100%;background:#059669"></div></div></td>
+          <td class="ds">5.0/5</td>
+          <td class="dr">🟢</td>
+          <td class="dr">汇总·Cranberry</td>
+        </tr></table>
+      <div class="cjudge">
+        <div class="cjudge-item" style="border-left-color:#2563eb"><b>📊 市场白牌化</b><span>品牌化市场</span><span class="subline">品牌格局清晰，品牌辨识度高</span></div>
+        <div class="cjudge-item" style="border-left-color:#2563eb"><b>🇨🇳 中国卖家适合度</b><span>市场待中国卖家验证，属于先行者机会</span></div>
+        <div class="cjudge-item" style="border-left-color:#e11d48"><b>🚀 新品牌适合度</b><span>难度较高，市场集中度高+评论壁垒强</span></div>
+        <div class="cjudge-item" style="border-left-color:#e8a838"><b>💰 长期利润</b><span>中等，需控制PPC成本维持净利</span></div>
+        <div class="cjudge-item" style="border-left-color:#059669"><b>🎯 推荐打法</b><span>强Review积累策略 ➔ 中国供应链成本优势</span></div>
+      </div>
+      <a class="clink" href="cranberry_gummies_women/细分类目分析报告-Cranberry Gummies for Women-女性蔓越莓软糖_交互版.html" target="_blank">📋 查看细分报告 →</a>
+    </div>
+    <div class="card">
+      <div class="chd">
+        <span class="ctitle">#13 蘑菇软糖 <small>Mushrooms Gummies</small></span>
+        <span class="cgrade" style="background:#e8a838">B级</span>
+        <span class="cscore">69.4<span class="cmax">/100</span></span>
+      </div>
+      <table class="dimtbl">
+        <tr>
+          <td class="dl">A1 市场规模</td>
+          <td class="dt">$14.9M/月</td>
+          <td class="dm">月销额14.9M</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:100%;background:#059669"></div></div></td>
+          <td class="ds">10.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·行业销售趋势</td>
+        </tr>
+        <tr>
+          <td class="dl">A2 增长趋势</td>
+          <td class="dt">+79%</td>
+          <td class="dm">半年环比销量增速+79%</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:100%;background:#059669"></div></div></td>
+          <td class="ds">10.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·行业销售趋势</td>
+        </tr>
+        <tr>
+          <td class="dl">A3 ≤12月新品占比</td>
+          <td class="dt">37%</td>
+          <td class="dm">≤12月新品占37%，偏离理想区间</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:68%;background:#e8a838"></div></div></td>
+          <td class="ds">6.8/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·上架时间分布</td>
+        </tr>
+        <tr>
+          <td class="dl">B1 品牌集中度BCR10</td>
+          <td class="dt">85%</td>
+          <td class="dm">BCR10=85%，偏高</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:51%;background:#e8a838"></div></div></td>
+          <td class="ds">5.1/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·品牌集中度</td>
+        </tr>
+        <tr>
+          <td class="dl">B2 评论壁垒500+</td>
+          <td class="dt">55%</td>
+          <td class="dm">500+评论占55%，高壁垒追赶</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:55%;background:#e8a838"></div></div></td>
+          <td class="ds">5.5/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·评分数分布</td>
+        </tr>
+        <tr>
+          <td class="dl">B3 内容品牌化A+/V</td>
+          <td class="dt">A+90%/V60%</td>
+          <td class="dm">A+90%+视频60%，均值75%</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:100%;background:#059669"></div></div></td>
+          <td class="ds">10.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·A+视频分布</td>
+        </tr>
+        <tr>
+          <td class="dl">C1 中国卖家占比</td>
+          <td class="dt">0%</td>
+          <td class="dm">中国卖家占0%，市场待验证</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:20%;background:#e11d48"></div></div></td>
+          <td class="ds">2.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·卖家所属地分布</td>
+        </tr>
+        <tr>
+          <td class="dl">C2 FBA同质化</td>
+          <td class="dt">90%</td>
+          <td class="dm">FBA占比90%，高同质化</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:30%;background:#e11d48"></div></div></td>
+          <td class="ds">3.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·卖家类型分布</td>
+        </tr>
+        <tr>
+          <td class="dl">D1 利润空间</td>
+          <td class="dt">ASP$24/毛利67%</td>
+          <td class="dm">ASP$24(5/5)+大类毛利率67%(4/5)</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:90%;background:#059669"></div></div></td>
+          <td class="ds">9.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">汇总·Mushrooms</td>
+        </tr>
+        <tr>
+          <td class="dl">E1 供应链复杂度</td>
+          <td class="dt">复杂度16.3</td>
+          <td class="dm">大类Mushrooms供应链复杂度16.3(低)</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:80%;background:#059669"></div></div></td>
+          <td class="ds">4.0/5</td>
+          <td class="dr">🟢</td>
+          <td class="dr">汇总·Mushrooms</td>
+        </tr>
+        <tr>
+          <td class="dl">E2 售后/退货率</td>
+          <td class="dt">退货0.30%</td>
+          <td class="dm">大类Mushrooms退货率0.30%(低)</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:80%;background:#059669"></div></div></td>
+          <td class="ds">4.0/5</td>
+          <td class="dr">🟢</td>
+          <td class="dr">汇总·Mushrooms</td>
+        </tr></table>
+      <div class="cjudge">
+        <div class="cjudge-item" style="border-left-color:#2563eb"><b>📊 市场白牌化</b><span>品牌化市场</span><span class="subline">品牌格局清晰，品牌辨识度高</span></div>
+        <div class="cjudge-item" style="border-left-color:#2563eb"><b>🇨🇳 中国卖家适合度</b><span>市场待中国卖家验证，属于先行者机会</span></div>
+        <div class="cjudge-item" style="border-left-color:#e11d48"><b>🚀 新品牌适合度</b><span>难度较高，市场集中度高+评论壁垒强</span></div>
+        <div class="cjudge-item" style="border-left-color:#059669"><b>💰 长期利润</b><span>良好，ASP健康且价格战程度低</span></div>
+        <div class="cjudge-item" style="border-left-color:#059669"><b>🎯 推荐打法</b><span>新品快速迭代抢占窗口 ➔ 中国供应链成本优势</span></div>
+      </div>
+      <a class="clink" href="mushroom_gummies/细分类目分析报告-Mushrooms Gummies-蘑菇软糖_交互版.html" target="_blank">📋 查看细分报告 →</a>
+    </div>
+    <div class="card">
+      <div class="chd">
+        <span class="ctitle">#14 褪黑素软糖 <small>Melatonin Gummies</small></span>
+        <span class="cgrade" style="background:#e8a838">B级</span>
+        <span class="cscore">69.2<span class="cmax">/100</span></span>
+      </div>
+      <table class="dimtbl">
+        <tr>
+          <td class="dl">A1 市场规模</td>
+          <td class="dt">$16.4M/月</td>
+          <td class="dm">月销额16.4M</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:100%;background:#059669"></div></div></td>
+          <td class="ds">10.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·行业销售趋势</td>
+        </tr>
+        <tr>
+          <td class="dl">A2 增长趋势</td>
+          <td class="dt">+24%</td>
+          <td class="dm">半年环比销量增速+24%</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:72%;background:#059669"></div></div></td>
+          <td class="ds">7.2/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·行业销售趋势</td>
+        </tr>
+        <tr>
+          <td class="dl">A3 ≤12月新品占比</td>
+          <td class="dt">10%</td>
+          <td class="dm">≤12月新品占10%，健康区间10-25%</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:100%;background:#059669"></div></div></td>
+          <td class="ds">10.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·上架时间分布</td>
+        </tr>
+        <tr>
+          <td class="dl">B1 品牌集中度BCR10</td>
+          <td class="dt">78%</td>
+          <td class="dm">BCR10=78%，偏高</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:65%;background:#e8a838"></div></div></td>
+          <td class="ds">6.5/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·品牌集中度</td>
+        </tr>
+        <tr>
+          <td class="dl">B2 评论壁垒500+</td>
+          <td class="dt">89%</td>
+          <td class="dm">500+评论占89%，高壁垒极难追赶</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:21%;background:#e11d48"></div></div></td>
+          <td class="ds">2.1/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·评分数分布</td>
+        </tr>
+        <tr>
+          <td class="dl">B3 内容品牌化A+/V</td>
+          <td class="dt">A+95%/V73%</td>
+          <td class="dm">A+95%+视频73%，均值84%</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:89%;background:#059669"></div></div></td>
+          <td class="ds">8.9/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·A+视频分布</td>
+        </tr>
+        <tr>
+          <td class="dl">C1 中国卖家占比</td>
+          <td class="dt">1%</td>
+          <td class="dm">中国卖家占1%，市场待验证</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:20%;background:#e11d48"></div></div></td>
+          <td class="ds">2.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·卖家所属地分布</td>
+        </tr>
+        <tr>
+          <td class="dl">C2 FBA同质化</td>
+          <td class="dt">45%</td>
+          <td class="dm">FBA占比45%，低同质化</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:100%;background:#059669"></div></div></td>
+          <td class="ds">10.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·卖家类型分布</td>
+        </tr>
+        <tr>
+          <td class="dl">D1 利润空间</td>
+          <td class="dt">ASP$16/毛利59%</td>
+          <td class="dm">ASP$16(3.5/5)+大类毛利率59%(3/5)</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:65%;background:#e8a838"></div></div></td>
+          <td class="ds">6.5/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">汇总·Sleep Supplements</td>
+        </tr>
+        <tr>
+          <td class="dl">E1 供应链复杂度</td>
+          <td class="dt">复杂度22.5</td>
+          <td class="dm">大类Sleep Supplements供应链复杂度22.5(中)</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:60%;background:#e8a838"></div></div></td>
+          <td class="ds">3.0/5</td>
+          <td class="dr">🟢</td>
+          <td class="dr">汇总·Sleep Supplements</td>
+        </tr>
+        <tr>
+          <td class="dl">E2 售后/退货率</td>
+          <td class="dt">退货0.31%</td>
+          <td class="dm">大类Sleep Supplements退货率0.31%(低)</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:60%;background:#e8a838"></div></div></td>
+          <td class="ds">3.0/5</td>
+          <td class="dr">🟢</td>
+          <td class="dr">汇总·Sleep Supplements</td>
+        </tr></table>
+      <div class="cjudge">
+        <div class="cjudge-item" style="border-left-color:#2563eb"><b>📊 市场白牌化</b><span>品牌化市场</span><span class="subline">品牌格局清晰，品牌辨识度高</span></div>
+        <div class="cjudge-item" style="border-left-color:#2563eb"><b>🇨🇳 中国卖家适合度</b><span>市场待中国卖家验证，属于先行者机会</span></div>
+        <div class="cjudge-item" style="border-left-color:#e11d48"><b>🚀 新品牌适合度</b><span>难度较高，市场集中度高+评论壁垒强</span></div>
+        <div class="cjudge-item" style="border-left-color:#e8a838"><b>💰 长期利润</b><span>中等，需控制PPC成本维持净利</span></div>
+        <div class="cjudge-item" style="border-left-color:#059669"><b>🎯 推荐打法</b><span>强Review积累策略 ➔ 中国供应链成本优势</span></div>
+      </div>
+      <a class="clink" href="melatonin_gummies/细分类目分析报告-Melatonin Gummies-褪黑素软糖_交互版.html" target="_blank">📋 查看细分报告 →</a>
+    </div>
+    <div class="card">
+      <div class="chd">
+        <span class="ctitle">#15 蔓越莓软糖 <small>Cranberry Gummies</small></span>
+        <span class="cgrade" style="background:#e8a838">B级</span>
+        <span class="cscore">68.0<span class="cmax">/100</span></span>
+      </div>
+      <table class="dimtbl">
+        <tr>
+          <td class="dl">A1 市场规模</td>
+          <td class="dt">$6.1M/月</td>
+          <td class="dm">月销额6.1M</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:100%;background:#059669"></div></div></td>
+          <td class="ds">10.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·行业销售趋势</td>
+        </tr>
+        <tr>
+          <td class="dl">A2 增长趋势</td>
+          <td class="dt">+22%</td>
+          <td class="dm">半年环比销量增速+22%</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:70%;background:#059669"></div></div></td>
+          <td class="ds">7.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·行业销售趋势</td>
+        </tr>
+        <tr>
+          <td class="dl">A3 ≤12月新品占比</td>
+          <td class="dt">33%</td>
+          <td class="dm">≤12月新品占33%，偏离理想区间</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:80%;background:#059669"></div></div></td>
+          <td class="ds">8.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·上架时间分布</td>
+        </tr>
+        <tr>
+          <td class="dl">B1 品牌集中度BCR10</td>
+          <td class="dt">79%</td>
+          <td class="dm">BCR10=79%，偏高</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:63%;background:#e8a838"></div></div></td>
+          <td class="ds">6.3/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·品牌集中度</td>
+        </tr>
+        <tr>
+          <td class="dl">B2 评论壁垒500+</td>
+          <td class="dt">63%</td>
+          <td class="dm">500+评论占63%，高壁垒追赶</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:47%;background:#e8a838"></div></div></td>
+          <td class="ds">4.7/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·评分数分布</td>
+        </tr>
+        <tr>
+          <td class="dl">B3 内容品牌化A+/V</td>
+          <td class="dt">A+95%/V57%</td>
+          <td class="dm">A+95%+视频57%，均值76%</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:100%;background:#059669"></div></div></td>
+          <td class="ds">10.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·A+视频分布</td>
+        </tr>
+        <tr>
+          <td class="dl">C1 中国卖家占比</td>
+          <td class="dt">2%</td>
+          <td class="dm">中国卖家占2%，市场待验证</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:20%;background:#e11d48"></div></div></td>
+          <td class="ds">2.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·卖家所属地分布</td>
+        </tr>
+        <tr>
+          <td class="dl">C2 FBA同质化</td>
+          <td class="dt">73%</td>
+          <td class="dm">FBA占比73%，高同质化</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:64%;background:#e8a838"></div></div></td>
+          <td class="ds">6.4/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·卖家类型分布</td>
+        </tr>
+        <tr>
+          <td class="dl">D1 利润空间</td>
+          <td class="dt">ASP$16/毛利63%</td>
+          <td class="dm">ASP$16(3.6/5)+大类毛利率63%(4/5)</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:76%;background:#059669"></div></div></td>
+          <td class="ds">7.6/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">汇总·Cranberry</td>
+        </tr>
+        <tr>
+          <td class="dl">E1 供应链复杂度</td>
+          <td class="dt">复杂度30.1</td>
+          <td class="dm">大类Cranberry供应链复杂度30.1(高)</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:20%;background:#e11d48"></div></div></td>
+          <td class="ds">1.0/5</td>
+          <td class="dr">🟢</td>
+          <td class="dr">汇总·Cranberry</td>
+        </tr>
+        <tr>
+          <td class="dl">E2 售后/退货率</td>
+          <td class="dt">退货0.27%</td>
+          <td class="dm">大类Cranberry退货率0.27%(极低)</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:100%;background:#059669"></div></div></td>
+          <td class="ds">5.0/5</td>
+          <td class="dr">🟢</td>
+          <td class="dr">汇总·Cranberry</td>
+        </tr></table>
+      <div class="cjudge">
+        <div class="cjudge-item" style="border-left-color:#2563eb"><b>📊 市场白牌化</b><span>品牌化市场</span><span class="subline">品牌格局清晰，品牌辨识度高</span></div>
+        <div class="cjudge-item" style="border-left-color:#2563eb"><b>🇨🇳 中国卖家适合度</b><span>市场待中国卖家验证，属于先行者机会</span></div>
+        <div class="cjudge-item" style="border-left-color:#e11d48"><b>🚀 新品牌适合度</b><span>难度较高，市场集中度高+评论壁垒强</span></div>
+        <div class="cjudge-item" style="border-left-color:#e8a838"><b>💰 长期利润</b><span>中等，需控制PPC成本维持净利</span></div>
+        <div class="cjudge-item" style="border-left-color:#059669"><b>🎯 推荐打法</b><span>强Review积累策略 ➔ 新品快速迭代抢占窗口 ➔ 中国供应链成本优势</span></div>
+      </div>
+      <a class="clink" href="cranberry_gummies/细分类目分析报告-Cranberry Gummies-蔓越莓软糖_交互版.html" target="_blank">📋 查看细分报告 →</a>
+    </div>
+    <div class="card">
+      <div class="chd">
+        <span class="ctitle">#16 女性荷尔蒙平衡 <small>Hormonal Balance for Women</small></span>
+        <span class="cgrade" style="background:#e8a838">B级</span>
+        <span class="cscore">66.0<span class="cmax">/100</span></span>
+      </div>
+      <table class="dimtbl">
+        <tr>
+          <td class="dl">A1 市场规模</td>
+          <td class="dt">$26.8M/月</td>
+          <td class="dm">月销额26.8M</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:100%;background:#059669"></div></div></td>
+          <td class="ds">10.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·行业销售趋势</td>
+        </tr>
+        <tr>
+          <td class="dl">A2 增长趋势</td>
+          <td class="dt">+33%</td>
+          <td class="dm">半年环比销量增速+33%</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:83%;background:#059669"></div></div></td>
+          <td class="ds">8.3/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·行业销售趋势</td>
+        </tr>
+        <tr>
+          <td class="dl">A3 ≤12月新品占比</td>
+          <td class="dt">19%</td>
+          <td class="dm">≤12月新品占19%，健康区间10-25%</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:100%;background:#059669"></div></div></td>
+          <td class="ds">10.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·上架时间分布</td>
+        </tr>
+        <tr>
+          <td class="dl">B1 品牌集中度BCR10</td>
+          <td class="dt">76%</td>
+          <td class="dm">BCR10=76%，偏高</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:69%;background:#e8a838"></div></div></td>
+          <td class="ds">6.9/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·品牌集中度</td>
+        </tr>
+        <tr>
+          <td class="dl">B2 评论壁垒500+</td>
+          <td class="dt">81%</td>
+          <td class="dm">500+评论占81%，高壁垒极难追赶</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:29%;background:#e11d48"></div></div></td>
+          <td class="ds">2.9/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·评分数分布</td>
+        </tr>
+        <tr>
+          <td class="dl">B3 内容品牌化A+/V</td>
+          <td class="dt">A+93%/V80%</td>
+          <td class="dm">A+93%+视频80%，均值86%</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:83%;background:#059669"></div></div></td>
+          <td class="ds">8.3/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·A+视频分布</td>
+        </tr>
+        <tr>
+          <td class="dl">C1 中国卖家占比</td>
+          <td class="dt">1%</td>
+          <td class="dm">中国卖家占1%，市场待验证</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:20%;background:#e11d48"></div></div></td>
+          <td class="ds">2.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·卖家所属地分布</td>
+        </tr>
+        <tr>
+          <td class="dl">C2 FBA同质化</td>
+          <td class="dt">92%</td>
+          <td class="dm">FBA占比92%，高同质化</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:26%;background:#e11d48"></div></div></td>
+          <td class="ds">2.6/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">Market·卖家类型分布</td>
+        </tr>
+        <tr>
+          <td class="dl">D1 利润空间</td>
+          <td class="dt">ASP$26/毛利66%</td>
+          <td class="dm">ASP$26(5/5)+大类毛利率66%(4/5)</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:90%;background:#059669"></div></div></td>
+          <td class="ds">9.0/10</td>
+          <td class="dr">🟢</td>
+          <td class="dr">汇总·Supplements</td>
+        </tr>
+        <tr>
+          <td class="dl">E1 供应链复杂度</td>
+          <td class="dt">复杂度22.1</td>
+          <td class="dm">大类Supplements供应链复杂度22.1(中)</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:60%;background:#e8a838"></div></div></td>
+          <td class="ds">3.0/5</td>
+          <td class="dr">🟢</td>
+          <td class="dr">汇总·Supplements</td>
+        </tr>
+        <tr>
+          <td class="dl">E2 售后/退货率</td>
+          <td class="dt">退货0.31%</td>
+          <td class="dm">大类Supplements退货率0.31%(低)</td>
+          <td class="db"><div class="bfill-track"><div class="bfill" style="width:60%;background:#e8a838"></div></div></td>
+          <td class="ds">3.0/5</td>
+          <td class="dr">🟢</td>
+          <td class="dr">汇总·Supplements</td>
+        </tr></table>
+      <div class="cjudge">
+        <div class="cjudge-item" style="border-left-color:#2563eb"><b>📊 市场白牌化</b><span>品牌化市场</span><span class="subline">品牌格局清晰，品牌辨识度高</span></div>
+        <div class="cjudge-item" style="border-left-color:#2563eb"><b>🇨🇳 中国卖家适合度</b><span>市场待中国卖家验证，属于先行者机会</span></div>
+        <div class="cjudge-item" style="border-left-color:#e11d48"><b>🚀 新品牌适合度</b><span>难度较高，市场集中度高+评论壁垒强</span></div>
+        <div class="cjudge-item" style="border-left-color:#059669"><b>💰 长期利润</b><span>良好，ASP健康且价格战程度低</span></div>
+        <div class="cjudge-item" style="border-left-color:#059669"><b>🎯 推荐打法</b><span>强Review积累策略 ➔ 中国供应链成本优势 ➔ Premium高端化路线</span></div>
+      </div>
+      <a class="clink" href="hormonal_balance/细分类目分析报告-Hormonal Balance for Women-女性荷尔蒙平衡_交互版.html" target="_blank">📋 查看细分报告 →</a>
+    </div></div>
+
+<div class="fn">
+  <strong>A1市场</strong>：月销售额(行业销售趋势末行) → 5级线性插值<br>
+  <strong>A2增长</strong>：前6月vs后6月销量均值环比<br>
+  <strong>A3新品</strong>：≤12月上架占比，健康区间10-25%<br>
+  <strong>B1 BCR10</strong>：Top10品牌销售额/总额，健康40-65%<br>
+  <strong>B2评论</strong>：500+Review产品占比，<50%较易切入<br>
+  <strong>B3内容</strong>：(A+%+视频%)/2，健康50-80%<br>
+  <strong>C1中国</strong>：卖家所属地China行销量占比<br>
+  <strong>C2 FBA</strong>：FBA卖家占比，中低最佳<br>
+  <strong>D1利润</strong>：ASP(5)+大类毛利率(5)<br>
+  <strong>E1供应链</strong>：大类目供应链复杂度<br>
+  <strong>E2售后</strong>：大类目退货率
+</div>
+</div>
+</body>
+</html>
