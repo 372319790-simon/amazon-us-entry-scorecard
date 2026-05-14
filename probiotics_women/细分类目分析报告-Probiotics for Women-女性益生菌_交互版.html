@@ -84,6 +84,15 @@ tr:last-child td{border-bottom:none}
 .v3-judge b{display:block;font-size:13px;color:#64748b;margin-bottom:4px;font-weight:600}
 .v3-judge span{display:block;font-weight:600;color:#1e293b;line-height:1.4;font-size:14px}
 .v3-sub{font-weight:400 !important;font-size:11px !important;color:#94a3b8 !important;margin-top:2px}
+
+#pw-gate {position:fixed;top:0;left:0;width:100%;height:100%;background:#0f172a;z-index:99999;display:flex;align-items:center;justify-content:center;flex-direction:column}
+#pw-gate h2 {color:#f1f5f9;font-size:22px;margin-bottom:6px;font-weight:700;letter-spacing:-0.3px}
+#pw-gate input {width:240px;padding:10px 14px;border:1px solid #475569;border-radius:6px;background:#1e293b;color:#f1f5f9;font-size:14px;outline:none;text-align:center;letter-spacing:2px}
+#pw-gate input:focus {border-color:#3b82f6;box-shadow:0 0 0 3px rgba(59,130,246,.15)}
+#pw-gate button {margin-top:10px;padding:8px 32px;background:linear-gradient(135deg,#2563eb,#3b82f6);color:#fff;border:none;border-radius:6px;font-size:13px;font-weight:600;cursor:pointer;transition:all .15s}
+#pw-gate button:hover {transform:translateY(-1px);box-shadow:0 2px 8px rgba(37,99,235,.3)}
+#pw-gate .pw-err {color:#ef4444;font-size:11px;margin-top:8px;display:none}
+#pw-gate .pw-sub {color:#94a3b8;font-size:12px;margin-bottom:20px}
 </style>
 <script>/**
  * Skipped minification because the original files appears to be already minified.
@@ -107,6 +116,13 @@ tr:last-child td{border-bottom:none}
 //# sourceMappingURL=chart.umd.js.map
 </script></head>
 <body>
+<div id="pw-gate">
+  <h2>品类细分报告</h2>
+  <div class="pw-sub">需密码访问</div>
+  <input type="password" id="pw-input" placeholder="输入密码" autofocus>
+  <button onclick="checkPw()">进入</button>
+  <div class="pw-err" id="pw-err">密码错误</div>
+</div>
 <div class="wrap">
 <div class="hero"><div><h1>Probiotics for Women<br><em>女性益生菌</em></h1><div style="font-size:12px;color:#94a3b8;margin-top:4px">Health &amp; Household / Vitamins &amp; Supplements / 女性益生菌 &middot; TOP100 &middot; 2026年05月</div><div style="font-size:11px;color:#64748b;margin-top:6px">数据源: Amazon US 平台数据 &middot; 关键词: 女性益生菌 &middot; 品类阶段: 成熟期</div><div class="hero-mini"><span>月销 <strong>186.7万</strong></span><span>均价 <strong>$28.04</strong></span><span>CR4 <strong>28.5%</strong></span><span>品牌 <strong>55个</strong></span><span>评分 <strong>4.50</strong></span><span>&le;6月 <strong>2%</strong></span><span>&le;12月 <strong>10%</strong></span><span>中国卖家 <strong>1.8%</strong></span></div></div><div style="text-align:center"><div style="display:flex;align-items:center;justify-content:center;gap:10px"><span style="display:inline-flex;align-items:center;justify-content:center;min-width:40px;padding:2px 12px;border-radius:6px;font-size:18px;font-weight:800;color:#fff;background:linear-gradient(135deg,#e8a838,#7c3aed)">B级</span><span style="font-size:32px;font-weight:900;letter-spacing:-1px;background:linear-gradient(135deg,#60a5fa,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">69.3<small style="font-size:14px;color:#94a3b8;font-weight:500;background:none;-webkit-text-fill-color:#94a3b8">/100</small></span></div><div class="scl" style="text-align:right;padding-right:4px">入驻优先级/评分</div></div></div>
 <div class="grid4"><div class="kpi"><div class="lab">月销量</div><div class="val">186.74万件</div></div><div class="kpi"><div class="lab">月销售额</div><div class="val">$54.1M</div></div><div class="kpi"><div class="lab">平均售价</div><div class="val">$28.04</div></div><div class="kpi"><div class="lab">平均评分</div><div class="val">4.50</div></div></div>
@@ -1051,6 +1067,11 @@ tr:last-child td{border-bottom:none}
   }
 });
 })();
+</script>
+<script>
+if(sessionStorage.getItem('pw_verified')==='1')document.getElementById('pw-gate').remove();
+async function checkPw(){const i=document.getElementById('pw-input').value;const h=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(i));const hex=[...new Uint8Array(h)].map(b=>b.toString(16).padStart(2,'0')).join('');if(hex==='a039a69595e7c9460cf21cf9d5ace5dbe8d65afe1fe50150de6b96d8815ac15c'){sessionStorage.setItem('pw_verified','1');document.getElementById('pw-gate').remove()}else{document.getElementById('pw-err').style.display='block';document.getElementById('pw-input').value=''}}
+document.getElementById('pw-input').addEventListener('keydown',e=>{if(e.key==='Enter')checkPw()});
 </script>
 </body>
 </html>
