@@ -8,13 +8,13 @@
 body {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Microsoft YaHei','PingFang SC',sans-serif;background:#f0f2f5;color:#1e293b;font-size:13px;line-height:1.5;position:relative}
 body::after {content:'内部报告 · 请勿外传 — Simon';position:fixed;top:50%;left:50%;transform:translate(-50%,-50%) rotate(-20deg);font-size:100px;color:rgba(0,0,0,0.025);white-space:nowrap;pointer-events:none;z-index:9999;font-weight:900;letter-spacing:6px;user-select:none}
 .wrap {max-width:1440px;margin:0 auto}
-.header {background:linear-gradient(135deg,#1e293b 0%,#334155 100%);color:#fff;padding:20px 0;margin:0 40px;border-radius:10px}
+.header {background:linear-gradient(135deg,#1e293b 0%,#334155 100%);color:#fff;padding:20px 16px;margin:0 40px;border-radius:10px}
 .header h1 {font-size:18px;font-weight:700;margin-bottom:2px;letter-spacing:-0.3px}
 .header .sub {color:#94a3b8;font-size:11px;font-weight:400}
 .header .meta {display:flex;gap:20px;margin-top:10px;font-size:10px;color:#94a3b8}
 .header .meta span {display:flex;align-items:center;gap:5px}
 .header .meta .v {background:rgba(255,255,255,0.1);padding:2px 7px;border-radius:3px;color:#e2e8f0;font-weight:600}
-.model {background:#fff;margin:10px 40px 0;padding:10px 0;border-radius:8px;font-size:10px;color:#475569;border:1px solid #e2e8f0;box-shadow:0 1px 2px rgba(0,0,0,.02);display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.model {background:#fff;margin:10px 40px 0;padding:10px 16px;border-radius:8px;font-size:10px;color:#475569;border:1px solid #e2e8f0;box-shadow:0 1px 2px rgba(0,0,0,.02);display:flex;align-items:center;gap:16px;flex-wrap:wrap}
 .model b {color:#2563eb;font-weight:600}
 .model .sep {color:#cbd5e1;font-size:10px}
 .legend {margin:6px 40px 0;font-size:9px;color:#cbd5e1;padding-left:2px}
@@ -37,12 +37,12 @@ body::after {content:'内部报告 · 请勿外传 — Simon';position:fixed;top
 .dimtbl .bfill-track {background:#f1f5f9;height:7px;border-radius:4px;width:100%}
 .dimtbl .ds {font-weight:700;color:#1e293b;text-align:right;width:42px;font-size:10px;white-space:nowrap}
 .dimtbl .dr {font-size:8px;color:#94a3b8;width:48px;text-align:center}
-.cjudge {display:flex;gap:6px;font-size:9px;padding-top:8px;border-top:1px solid #f1f5f9;flex-wrap:wrap}
-.cjudge-item {flex:1;min-width:110px;background:#f8fafc;border-radius:6px;padding:8px 9px;border-left:2.5px solid #cbd5e1;transition:all .15s}
+.cjudge {display:flex;gap:6px;font-size:10px;padding-top:8px;border-top:1px solid #f1f5f9;flex-wrap:wrap;align-items:stretch}
+.cjudge-item {flex:1;min-width:110px;background:#f8fafc;border-radius:6px;padding:10px 10px;border-left:2.5px solid #cbd5e1;transition:all .15s;display:flex;flex-direction:column;justify-content:center;min-height:56px}
 .cjudge-item:hover {background:#f1f5f9;transform:translateY(-1px)}
-.cjudge-item b {display:block;font-size:8px;color:#64748b;margin-bottom:2px;text-transform:uppercase;letter-spacing:0.3px;font-weight:600}
-.cjudge-item span {display:block;font-weight:600;color:#1e293b;line-height:1.4;font-size:9px}
-.cjudge-item .subline {font-weight:400;font-size:8px;color:#94a3b8;margin-top:1px}
+.cjudge-item b {display:block;font-size:9px;color:#64748b;margin-bottom:3px;text-transform:uppercase;letter-spacing:0.3px;font-weight:600}
+.cjudge-item span {display:block;font-weight:600;color:#1e293b;line-height:1.4;font-size:10px}
+.cjudge-item .subline {font-weight:400;font-size:9px;color:#94a3b8;margin-top:2px}
 .clink {display:block;margin-top:10px;padding:7px 0;border-top:1px solid #e2e8f0;text-align:center;font-size:11px;color:#fff;background:linear-gradient(135deg,#2563eb,#3b82f6);text-decoration:none;font-weight:600;border-radius:6px;letter-spacing:0.3px;transition:all .15s;box-shadow:0 1px 3px rgba(37,99,235,.15)}
 .clink:hover {background:linear-gradient(135deg,#1d4ed8,#2563eb);box-shadow:0 2px 6px rgba(37,99,235,.25);transform:translateY(-1px)}
 .fn {font-size:9px;color:#94a3b8;padding:0 40px 24px;line-height:1.9;column-count:2;column-gap:36px}
