@@ -1085,16 +1085,25 @@ tr:last-child td{border-bottom:none}
 <script>
 (function(){
   var gate=document.getElementById('pw-gate');
-  if(!gate)return;
-  if(localStorage.getItem('pw_verified')&&(Date.now()-parseInt(localStorage.getItem('pw_verified'))<3600000)){gate.remove();return;}
+  var main=document.getElementById('pw-main');
+  if(!gate||!main)return;
+  try{
+    if(sessionStorage.getItem('_auth')==='1'){gate.style.display='none';main.style.display='block';return;}
+  }catch(e){}
   window.checkPw=async function(){
     var inp=document.getElementById('pw-input'),err=document.getElementById('pw-err');
-    var h=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(inp.value));
-    var hex=[...new Uint8Array(h)].map(function(b){return b.toString(16).padStart(2,'0')}).join('');
-    if(hex==='a039a69595e7c9460cf21cf9d5ace5dbe8d65afe1fe50150de6b96d8815ac15c'){localStorage.setItem('pw_verified',Date.now().toString());gate.remove()}else{err.style.display='block';inp.value='';}
+    var pw=inp.value;
+    try{
+      var h=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(pw));
+      var hex=Array.from(new Uint8Array(h)).map(function(b){return b.toString(16).padStart(2,'0')}).join('');
+      if(hex==='a039a69595e7c9460cf21cf9d5ace5dbe8d65afe1fe50150de6b96d8815ac15c'){
+        gate.style.display='none';main.style.display='block';
+        try{sessionStorage.setItem('_auth','1')}catch(e){}
+      }else{err.style.display='block';inp.value=''}
+    }catch(e){err.textContent='Browser not supported. Use Chrome/Safari.';err.style.display='block'}
   };
-  document.getElementById('pw-input').addEventListener('keydown',function(e){if(e.key==='Enter')checkPw()});
+  var pi=document.getElementById('pw-input');
+  if(pi)pi.addEventListener('keydown',function(e){if(e.key==='Enter')checkPw()});
 })();
-</script>
 </body>
 </html>
