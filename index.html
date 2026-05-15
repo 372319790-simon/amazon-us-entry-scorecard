@@ -49,25 +49,25 @@ body::after {content:'内部报告 · 请勿外传 — Simon';position:fixed;top
 .fn {font-size:9px;color:#94a3b8;padding:0 40px 24px;line-height:1.9;column-count:2;column-gap:36px}
 .fn strong {color:#64748b;font-weight:600}
 @media (max-width:900px) {.cards {grid-template-columns:1fr} .fn {column-count:1}}
-#pw-gate {position:fixed;top:0;left:0;width:100%;height:100%;background:#0f172a;z-index:99999;display:flex;align-items:center;justify-content:center;flex-direction:column}
-#pw-gate h2 {color:#f1f5f9;font-size:22px;margin-bottom:6px;font-weight:700;letter-spacing:-0.3px}
-#pw-gate .pw-sub {color:#94a3b8;font-size:12px;margin-bottom:20px}
-#pw-gate input {width:240px;padding:10px 14px;border:1px solid #475569;border-radius:6px;background:#1e293b;color:#f1f5f9;font-size:14px;outline:none;text-align:center;letter-spacing:2px}
-#pw-gate input:focus {border-color:#3b82f6;box-shadow:0 0 0 3px rgba(59,130,246,.15)}
-#pw-gate button {margin-top:10px;padding:8px 32px;background:linear-gradient(135deg,#2563eb,#3b82f6);color:#fff;border:none;border-radius:6px;font-size:13px;font-weight:600;cursor:pointer;transition:all .15s}
-#pw-gate button:hover {transform:translateY(-1px);box-shadow:0 2px 8px rgba(37,99,235,.3)}
-#pw-gate .pw-err {color:#ef4444;font-size:11px;margin-top:8px;display:none}
+
 </style>
 </head>
 <body>
-<div id="pw-gate">
-  <h2>入驻优先级 V3.0</h2>
-  <div class="pw-sub">Amazon US 营养品 · 请输入访问密码</div>
+<div id="login-gate" style="position:fixed;inset:0;z-index:99999;background:#0f172a;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px;">
+  <h1 style="font-size:2rem;color:#3b82f6;">数据保护</h1>
+  <p style="color:#94a3b8;">请输入访问密码</p>
+  <input id="pw-input" type="password" placeholder="密码" autofocus
+    style="width:280px;padding:12px 16px;border:1px solid #334155;border-radius:8px;background:#1e293b;color:#f1f5f9;font-size:1rem;outline:none;"
+    onkeydown="if(event.key=='Enter')checkPw()">
+  <button onclick="checkPw()" style="padding:10px 32px;background:#3b82f6;color:#fff;border:none;border-radius:8px;font-size:1rem;font-weight:bold;cursor:pointer;">验证</button>
+  <p id="pw-error" style="color:#ef4444;font-size:0.85rem;display:none;">密码错误</p>
+</div>
+
   <input type="password" id="pw-input" placeholder="输入密码" autofocus>
   <button onclick="checkPw()">验证</button>
   <div class="pw-err" id="pw-err">密码错误</div>
 </div>
-<div id="pw-main" style="display:none">
+<div id="main-content" style="display:none">
 <div class="wrap">
 <div class="header">
   <h1>入驻优先级 V3.0</h1>
@@ -1974,34 +1974,27 @@ body::after {content:'内部报告 · 请勿外传 — Simon';position:fixed;top
 
 </div>
 
-
 </div>
+<script>
+async function sha256(t){const e=new TextEncoder().encode(t);const h=await crypto.subtle.digest('SHA-256',e);return Array.from(new Uint8Array(h)).map(b=>b.toString(16).padStart(2,'0')).join('')}
+async function checkPw(){
+  const input=document.getElementById('pw-input').value;
+  const hash=await sha256(input);
+  if(hash==='a039a69595e7c9460cf21cf9d5ace5dbe8d65afe1fe50150de6b96d8815ac15c'){
+    document.getElementById('login-gate').style.display='none';
+    document.getElementById('main-content').style.display='block';
+    sessionStorage.setItem('_auth','1');
+  }else{
+    document.getElementById('pw-error').style.display='block';
+    document.getElementById('pw-input').value='';
+  }
+}
+if(sessionStorage.getItem('_auth')==='1'){
+  document.getElementById('login-gate').style.display='none';
+  document.getElementById('main-content').style.display='block';
+}
+</script>
 </body>
 <script>
-<script>
-(function(){
-  var gate=document.getElementById('pw-gate');
-  var main=document.getElementById('pw-main');
-  if(!gate||!main)return;
-  // sessionStorage: clears when tab closes, safer for embedded browsers like Feishu
-  try{
-    if(sessionStorage.getItem('_auth')==='1'){gate.style.display='none';main.style.display='block';return;}
-  }catch(e){}
-  window.checkPw=async function(){
-    var inp=document.getElementById('pw-input'),err=document.getElementById('pw-err');
-    var pw=inp.value;
-    try{
-      var h=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(pw));
-      var hex=Array.from(new Uint8Array(h)).map(function(b){return b.toString(16).padStart(2,'0')}).join('');
-      if(hex==='a039a69595e7c9460cf21cf9d5ace5dbe8d65afe1fe50150de6b96d8815ac15c'){
-        gate.style.display='none';main.style.display='block';
-        try{sessionStorage.setItem('_auth','1')}catch(e){}
-      }else{err.style.display='block';inp.value=''}
-    }catch(e){err.textContent='浏览器不支持，请用 Chrome/Safari 打开';err.style.display='block'}
-  };
-  var pi=document.getElementById('pw-input');
-  if(pi)pi.addEventListener('keydown',function(e){if(e.key==='Enter')checkPw()});
-})();
-</script>
 
 </html>
