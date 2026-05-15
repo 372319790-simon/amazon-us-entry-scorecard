@@ -27,8 +27,8 @@ body::after {content:'内部报告 · 请勿外传 — Simon';position:fixed;top
 .cscore {font-size:22px;font-weight:800;background:linear-gradient(180deg,#e0f2fe,#60a5fa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-left:auto;letter-spacing:-0.5px} .cmax {color:#475569;font-size:11px;margin-left:1px;font-weight:500;-webkit-text-fill-color:#475569}
 .dimtbl {width:100%;border-collapse:collapse;font-size:9px;margin-bottom:10px}
 .dimtbl thead th {font-size:8px;color:#94a3b8;font-weight:500;text-transform:uppercase;letter-spacing:0.3px;padding-bottom:5px;border-bottom:1.5px solid #e2e8f0}
-.dimtbl td {padding:4px 6px;border-bottom:1px solid #f1f5f9;vertical-align:middle}
-.dimtbl .dim-sep td {padding:2px 6px;border-bottom:1.5px solid #e2e8f0}
+.dimtbl td {padding:4px 6px;border-bottom:1px solid #f1f5f9;vertical-align:middle;height:28px}
+.dimtbl .dim-sep td {padding:2px 6px;border-bottom:1.5px solid #e2e8f0;height:6px}
 .dimtbl tr:last-child td {border-bottom:none}
 .dimtbl .dl {font-weight:600;color:#1e293b;width:115px;font-size:9px}
 .dimtbl .dt {color:#475569;width:78px;font-weight:500;font-size:9px;white-space:nowrap}
@@ -37,8 +37,8 @@ body::after {content:'内部报告 · 请勿外传 — Simon';position:fixed;top
 .dimtbl .bfill-track {background:#f1f5f9;height:7px;border-radius:4px;width:100%}
 .dimtbl .ds {font-weight:700;color:#1e293b;text-align:right;width:42px;font-size:10px;white-space:nowrap}
 .dimtbl .dr {font-size:8px;color:#94a3b8;width:48px;text-align:center}
-.cjudge {display:flex;gap:6px;font-size:10px;padding-top:8px;border-top:1px solid #f1f5f9;flex-wrap:wrap;align-items:stretch}
-.cjudge-item {flex:1;min-width:110px;background:#f8fafc;border-radius:6px;padding:10px 10px;border-left:2.5px solid #cbd5e1;transition:all .15s;display:flex;flex-direction:column;justify-content:center;min-height:56px}
+.cjudge {display:flex;gap:6px;font-size:10px;padding-top:8px;border-top:1px solid #f1f5f9;flex-wrap:nowrap;align-items:stretch;overflow:hidden}
+.cjudge-item {flex:1;min-width:110px;background:#f8fafc;border-radius:6px;padding:10px 10px;border-left:2.5px solid #cbd5e1;transition:all .15s;display:flex;flex-direction:column;justify-content:center;min-height:93px}
 .cjudge-item:hover {background:#f1f5f9;transform:translateY(-1px)}
 .cjudge-item b {display:block;font-size:9px;color:#64748b;margin-bottom:3px;text-transform:uppercase;letter-spacing:0.3px;font-weight:600}
 .cjudge-item span {display:block;font-weight:600;color:#1e293b;line-height:1.4;font-size:10px}
