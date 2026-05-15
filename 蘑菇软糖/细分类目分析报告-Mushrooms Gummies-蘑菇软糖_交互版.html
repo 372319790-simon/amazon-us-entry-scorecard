@@ -891,21 +891,11 @@ tr:last-child td{border-bottom:none}
       {
         label: "月销量",
         data: [130311.0, 46448.0, 34659.0, 21411.0, 15668.0, 12809.0, 10635.0, 9674.0, 9457.0, 9158.0],
-        backgroundColor: [
-          "rgba(37,99,235,0.40)",
-          "rgba(37,99,235,0.46)",
-          "rgba(37,99,235,0.52)",
-          "rgba(37,99,235,0.58)",
-          "rgba(37,99,235,0.64)",
-          "rgba(37,99,235,0.70)",
-          "rgba(37,99,235,0.76)",
-          "rgba(37,99,235,0.82)",
-          "rgba(37,99,235,0.88)",
-          "rgba(37,99,235,0.94)"
-        ],
+        backgroundColor: ["#b0b8c4", "#b0b8c4", "#b0b8c4", "#b0b8c4", "#b0b8c4", "#b0b8c4", "#b0b8c4", "#b0b8c4", "#b0b8c4", "#b0b8c4"],
         borderRadius: 3,
         _rev: [6617600.31, 1392149.91, 1341487.08, 443455.47, 538153.35, 354969.56, 372118.66, 223010.72, 178517.44, 201018.11],
-        _price: [52.14, 29.98, 42.95, 20.2, 36.66, 24.95, 39.99, 23.05, 15.31, 21.95]
+        _price: [52.14, 29.98, 42.95, 20.2, 36.66, 24.95, 39.99, 23.05, 15.31, 21.95],
+        _types: ["\u5176\u4ed6", "\u5176\u4ed6", "\u5176\u4ed6", "\u5176\u4ed6", "\u5176\u4ed6", "\u5176\u4ed6", "\u5176\u4ed6", "\u5176\u4ed6", "\u5176\u4ed6", "\u5176\u4ed6"]
       }
     ]
   },
@@ -943,7 +933,7 @@ tr:last-child td{border-bottom:none}
       },
       tooltip: {
         callbacks: {
-          label: function(c){var i=c.dataIndex,d=c.dataset;return["月销量: "+Math.round(c.raw).toLocaleString()+"件","月销售额: $"+Math.round(d._rev[i]).toLocaleString(),"均价: $"+d._price[i].toFixed(2)]}
+          label: function(c){var i=c.dataIndex,d=c.dataset,s="";s+="月销量: "+Math.round(c.raw).toLocaleString()+"件\n";s+="月销售额: $"+Math.round(d._rev[i]||0).toLocaleString()+"\n";s+="均价: $"+(d._price[i]||0).toFixed(2)+"\n";s+="类型: "+d._types[i];return s.split("\n")}
         }
       },
       legend: {
